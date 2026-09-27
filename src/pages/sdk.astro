@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/LandingLayout.astro';
+const packages = [
+  { cat: '核心', pkgs: [{ name: '@autional-cn/core', desc: '令牌管理、API 客户端、认证流程', install: 'npm install @autional-cn/core', repo: 'https://github.com/autional-cn/sdk' }] },
+  { cat: '框架', pkgs: [
+    { name: '@autional-cn/react', desc: 'React —— AuthProvider、useAuth、RequireAuth', install: 'npm install @autional-cn/react @autional-cn/core', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/vue', desc: 'Vue 3 —— 插件、组合式函数、路由守卫', install: 'npm install @autional-cn/vue @autional-cn/core', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/next', desc: 'Next.js App Router —— 中间件、服务端组件', install: 'npm install @autional-cn/next @autional-cn/core', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/node', desc: 'Node.js 服务端中间件、令牌校验', install: 'npm install @autional-cn/node', repo: 'https://github.com/autional-cn/sdk' },
+  ]},
+  { cat: '移动端', pkgs: [
+    { name: '@autional-cn/miniapp', desc: '微信小程序适配器', install: 'npm install @autional-cn/miniapp @autional-cn/core', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/react-native', desc: 'React Native —— 安全令牌存储、生物识别', install: 'npm install @autional-cn/react-native @autional-cn/core', repo: 'https://github.com/autional-cn/sdk' },
+  ]},
+  { cat: '插件', pkgs: [
+    { name: '@autional-cn/plugin-mfa', desc: 'MFA 配置流程、设备管理', install: 'npm install @autional-cn/plugin-mfa', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/plugin-passkey', desc: '通行密钥（Passkey）注册与断言', install: 'npm install @autional-cn/plugin-passkey', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/plugin-tenant', desc: '多租户组织管理', install: 'npm install @autional-cn/plugin-tenant', repo: 'https://github.com/autional-cn/sdk' },
+  ]},
+  { cat: 'API 客户端（自动生成）', pkgs: [
+    { name: '@autional-cn/api-identity', desc: '身份服务 TypeScript 客户端', install: 'npm install @autional-cn/api-identity', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/api-mfa', desc: 'MFA / WebAuthn / 自适应认证', install: 'npm install @autional-cn/api-mfa', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/api-oauth', desc: 'OAuth / OIDC 授权服务器', install: 'npm install @autional-cn/api-oauth', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/api-session', desc: '会话与令牌管理', install: 'npm install @autional-cn/api-session', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/api-profile', desc: '用户资料、隐私、偏好设置', install: 'npm install @autional-cn/api-profile', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/api-tenant', desc: '租户、组织、部门 CRUD', install: 'npm install @autional-cn/api-tenant', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/api-rbac', desc: 'RBAC 角色、权限、分配', install: 'npm install @autional-cn/api-rbac', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '@autional-cn/api-billing', desc: '订阅计费、套餐、用量计量', install: 'npm install @autional-cn/api-billing', repo: 'https://github.com/autional-cn/sdk' },
+    { name: '另有 11 个', desc: 'audit、compliance、wallet、point、pay、storage 等', install: '', repo: 'https://github.com/autional-cn/sdk' },
+  ]},
+];
+const quickstarts = [
+  { lang: 'React', code: 'import { AuthProvider } from \'@autional-cn/react\';\n\nfunction App() {\n  return (\n    <AuthProvider>\n      <YourApp />\n    </AuthProvider>\n  );\n}', install: 'npm install @autional-cn/react @autional-cn/core' },
+  { lang: 'Vue', code: 'import { createApp } from \'vue\'\nimport AutionalPlugin from \'@autional-cn/vue\'\n\nconst app = createApp(App)\napp.use(AutionalPlugin)\napp.mount(\'#app\')', install: 'npm install @autional-cn/vue @autional-cn/core' },
+  { lang: 'Node.js', code: 'import { verifyToken } from \'@autional-cn/node\';\n\napp.use(async (req, res, next) => {\n  const user = await verifyToken(req);\n  req.user = user;\n  next();\n});', install: 'npm install @autional-cn/node' },
+];
+---
+<Layout title="SDK — Autional" description="Autional SDK：面向 React、Vue、Next.js、Node.js 等框架的 30+ 个软件包。" keywords="Autional, SDK, React, Vue, Next.js, Node.js, 认证, TypeScript, npm, 开源">
+  <section class="mx-auto max-w-6xl px-4 py-20">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl font-bold sm:text-5xl">SDK</h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-500">30+ 个 npm 软件包。一行代码即可为你的应用接入身份能力。React、Vue、Next.js、Node.js，以及 19 个自动生成的 API 客户端。</p>
+    </div>
+
+    <!-- Quickstarts -->
+    <div class="mb-20"><h2 class="text-2xl font-bold mb-8 text-center">一行代码快速开始</h2>
+      {quickstarts.map(q => (
+        <div class="mb-6"><div class="flex items-center gap-3 mb-2"><span class="rounded-full bg-primary-50 text-primary-700 px-3 py-0.5 text-xs font-medium">{q.lang}</span></div>
+          <div class="rounded-xl bg-slate-900 dark:bg-slate-950 border border-neutral-700 p-5 overflow-x-auto">
+            <pre class="text-sm text-green-400 font-mono leading-relaxed">{q.code}</pre>
+            <p class="mt-3 text-xs text-neutral-500 font-mono border-t border-neutral-700 pt-3"><span class="text-green-400">$</span> {q.install}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- All Packages -->
+    <h2 class="text-2xl font-bold mb-8">全部软件包</h2>
+    {packages.map(g => (
+      <div class="mb-12"><h3 class="text-lg font-semibold text-primary-600 mb-4">{g.cat}</h3>
+        <div class="grid gap-3 sm:grid-cols-2">{g.pkgs.map(p => (
+          <div class="rounded-xl border border-neutral-200 dark:border-neutral-800 p-4 flex flex-col justify-between">
+            <div><code class="text-sm font-mono font-semibold text-primary-700 dark:text-primary-300">{p.name}</code><p class="mt-1 text-sm text-neutral-500">{p.desc}</p></div>
+            <div class="mt-3 flex items-center gap-2 text-xs">{p.install && <code class="text-neutral-400 bg-neutral-50 dark:bg-slate-900 px-2 py-1 rounded">{p.install}</code>}<a href={p.repo} class="text-primary-600 hover:underline ml-auto">源码 →</a></div>
+          </div>
+        ))}</div>
+      </div>
+    ))}
+
+    <!-- CTA -->
+    <div class="mt-16 text-center">
+      <div class="brand-card inline-block px-10 py-8">
+        <p class="text-lg font-semibold text-primary-900 dark:text-white">准备好集成了吗？</p>
+        <p class="mt-2 text-sm text-neutral-500">选择你的框架，一行代码接入认证。</p>
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+          <a href="https://developer.autional.cn/quickstart" class="brand-button-primary">快速开始指南 →</a>
+          <a href="https://github.com/autional-cn/sdk" class="rounded-full border border-neutral-300 dark:border-neutral-700 px-5 py-2.5 text-sm font-semibold text-neutral-700 dark:text-neutral-200 transition hover:bg-neutral-50 dark:hover:bg-white/10">在 GitHub 上查看全部</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/LandingLayout.astro';
+---
+<Layout title="技术展示 — Autional" description="Autional 身份平台能力的真实技术展示。" keywords="Autional, 展示, 演示, 身份, 认证, IAM, 企业">
+  <section class="mx-auto max-w-5xl px-4 py-20 text-center">
+    <h1 class="text-4xl font-bold sm:text-5xl">技术展示</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-500">Autional 身份平台在真实场景下的能力与功能演示。</p>
+    <div class="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+      {[['1,400+','API 端点'],['24','微服务'],['Go / TypeScript','技术栈'],['AGPL-3.0','开源']].map(([v,l]) => (
+        <div class="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-slate-900 p-6 shadow-sm"><div class="text-3xl font-bold text-primary-600">{v}</div><div class="mt-1 text-sm text-neutral-500">{l}</div></div>
+      ))}
+    </div>
+    <div class="mt-16 grid gap-6 sm:grid-cols-2 text-left">
+      <div class="rounded-xl border border-neutral-200 dark:border-neutral-800 p-6"><h3 class="font-semibold">开发者文档</h3><p class="mt-2 text-sm text-neutral-500">1,400+ 个 REST API 端点，支持 gRPC，提供交互式 Swagger 文档与自动生成的 TypeScript 类型。</p><a href="/docs" class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700">查看文档 →</a></div>
+      <div class="rounded-xl border border-neutral-200 dark:border-neutral-800 p-6"><h3 class="font-semibold">功能总览</h3><p class="mt-2 text-sm text-neutral-500">SSO、MFA、通行密钥（Passkey）、RBAC、NHI、多租户、审计、合规 —— 完整的身份管理能力。</p><a href="/features" class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700">浏览功能特性 →</a></div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,74 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/LandingLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }: { data: CollectionEntry<'blog'>['data'] }) => data.status === 'verified');
+  return posts.map((post: CollectionEntry<'blog'>) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: CollectionEntry<'blog'> };
+const { data } = post;
+const { Content } = await post.render();
+const postUrl = `https://www.autional.cn/blog/${post.id.replace(/\.md$/, '')}/`;
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  description: data.excerpt,
+  datePublished: data.date,
+  author: { '@type': 'Organization', name: 'Autional' },
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.autional.cn' },
+    { '@type': 'ListItem', position: 2, name: '博客', item: 'https://www.autional.cn/blog' },
+    { '@type': 'ListItem', position: 3, name: data.category, item: `https://www.autional.cn/blog?category=${encodeURIComponent(data.category)}` },
+    { '@type': 'ListItem', position: 4, name: data.title },
+  ],
+};
+
+const keywords = ['Autional', '身份', '认证', data.category, ...data.tags].join(', ');
+---
+
+<Layout
+  title={`${data.title} — Autional 博客`}
+  description={data.excerpt}
+  ogType="article"
+  keywords={keywords}
+  jsonLd={[articleJsonLd, breadcrumbJsonLd]}
+>
+  <article class="mx-auto max-w-3xl px-4 py-12">
+    <nav class="mb-8 flex flex-wrap items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400" aria-label="Breadcrumb">
+      <a href="/blog" class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 font-medium text-neutral-700 transition-colors hover:border-primary-200 hover:text-primary-700 dark:border-neutral-800 dark:bg-slate-900 dark:text-neutral-300 dark:hover:border-primary-700 dark:hover:text-white">
+        <span aria-hidden="true">&larr;</span>
+        返回博客
+      </a>
+      <span>/</span>
+      <a href="/blog" class="hover:text-primary-600">博客</a>
+      <span>/</span>
+      <span>{data.category}</span>
+    </nav>
+    <div class="flex flex-wrap items-center gap-3 text-sm text-neutral-500">
+      <span class="rounded-full bg-primary-50 dark:bg-primary-900/30 px-3 py-1 text-xs font-medium text-primary-700">{data.category}</span>
+      <time datetime={data.date}>{data.date}</time>
+      <span>{data.readTime}</span>
+      {data.tags.map((tag: string) => <span>#{tag}</span>)}
+    </div>
+    <h1 class="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">{data.title}</h1>
+    <div class="mt-8 prose prose-lg dark:prose-invert max-w-none"><Content /></div>
+    <div class="mt-12 border-t border-neutral-200 pt-6 dark:border-neutral-800">
+      <a href="/blog" class="inline-flex items-center gap-2 text-sm font-medium text-primary-600 transition-colors hover:text-primary-700">
+        <span aria-hidden="true">&larr;</span>
+        返回全部博客文章
+      </a>
+    </div>
+  </article>
+</Layout>

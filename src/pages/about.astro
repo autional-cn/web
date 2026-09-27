@@ -1,0 +1,53 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+const milestones = [
+  { date: '2024 Q1', title: '项目启动', desc: '核心认证引擎开始研发。Autional 诞生于对基于 Go 构建的开源身份平台的需求。' },
+  { date: '2024 Q4', title: 'Alpha 版本发布', desc: '首个公开版本，包含 SSO、MFA 与 RBAC。14 个微服务覆盖核心身份生命周期。' },
+  { date: '2025 Q2', title: '开源发布', desc: '核心模块以 AGPL 协议开源，社区采用随之起步，GitHub Star 自然增长。' },
+  { date: '2026 Q1', title: 'Autional 发布', desc: '品牌升级为 Autional —— 面向 AI 生成应用的身份层。24 个服务、1,400+ API、完整的企业级合规能力。' },
+];
+const values = [
+  { icon: '🔓', title: '开放优先', desc: '源代码、架构与路线图全部开放。没有黑盒、没有隐藏定价、没有厂商锁定。' },
+  { icon: '⚡', title: 'AI 原生', desc: '为 AI 时代而生。从 Bolt 到 Cursor，从 MVP 到企业级 —— 身份能力始终跟得上 AI 速度的开发节奏。' },
+  { icon: '🤝', title: '开发者体验', desc: '10 分钟集成。自动生成 SDK。类型安全的 API。像产品而不像平台的身份基础设施。' },
+  { icon: '🔒', title: '默认安全', desc: '企业级安全，却没有企业级的复杂度。哈希链审计、自适应 MFA、多租户隔离 —— 内建设计，而非事后外挂。' },
+];
+const roadmap = [
+  { period: '2026 Q3', items: ['Autional MCP Server —— 与 AI 编码工具自动集成', 'Bolt.new 与 Lovable.dev 模板', 'React SDK v1.0', '管理控制台改版'] },
+  { period: '2026 Q4', items: ['Autional Cloud 公测', 'Vue 与 Next.js SDK', 'WebAuthn 通行密钥透传', 'SOC 2 Type II 审计'] },
+  { period: '2027 H1', items: ['Go 与 Python SDK', '多区域云部署', 'AI 智能体认证（NHI）', '企业级审计归档'] },
+];
+---
+<LandingLayout title="关于 — Autional" description="Autional 是面向 AI 生成应用的身份层。了解我们的故事、使命与路线图。" keywords="Autional, 关于, 身份, IAM, 开源, 使命, 团队">
+  <section class="mx-auto max-w-4xl px-4 py-20">
+    <!-- Hero -->
+    <div class="text-center mb-20">
+      <h1 class="text-4xl font-bold sm:text-5xl">关于 Autional</h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-500 leading-relaxed">Autional 诞生于一个朴素的信念：每个 AI 生成的应用都值得拥有一个可直接上生产的用户体系 —— 无需从零自建，不被厂商锁定，也没有企业级的复杂度。</p>
+    </div>
+    <!-- Mission -->
+    <div class="rounded-2xl bg-primary-50 dark:bg-primary-900/10 border border-primary-100 dark:border-primary-900/20 p-10 text-center mb-20">
+      <h2 class="text-2xl font-bold">我们的使命</h2>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">让身份基础设施像 AI 生成的代码一样易于获得。无论团队规模大小，每位开发者都应该能在几分钟内 —— 而不是几个迭代内 —— 为自己的应用赋予企业级的认证、授权与合规能力。</p>
+    </div>
+    <!-- Values -->
+    <div class="mb-20"><h2 class="text-2xl font-bold text-center mb-12">我们的价值观</h2>
+      <div class="grid gap-6 sm:grid-cols-2">{values.map(v => (
+        <div class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-8"><div class="text-3xl mb-4">{v.icon}</div><h3 class="font-semibold text-lg">{v.title}</h3><p class="mt-2 text-sm text-neutral-500 leading-relaxed">{v.desc}</p></div>
+      ))}</div>
+    </div>
+    <!-- Milestones -->
+    <div class="mb-20"><h2 class="text-2xl font-bold text-center mb-12">我们的历程</h2>
+      <div class="space-y-8">{milestones.map((m,i) => (
+        <div class="flex gap-6"><div class="flex flex-col items-center"><div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white text-sm font-bold">{i+1}</div>{i < milestones.length-1 && <div class="w-px flex-1 bg-neutral-200 dark:bg-neutral-700 mt-2"></div>}</div>
+        <div class="pb-8"><div class="text-sm font-semibold text-primary-600">{m.date}</div><h3 class="text-lg font-bold">{m.title}</h3><p class="mt-1 text-sm text-neutral-500">{m.desc}</p></div></div>
+      ))}</div>
+    </div>
+    <!-- Roadmap -->
+    <div><h2 class="text-2xl font-bold text-center mb-12">路线图</h2>
+      <div class="grid gap-6 md:grid-cols-3">{roadmap.map(r => (
+        <div class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-6"><div class="text-sm font-semibold text-primary-600 mb-3">{r.period}</div><ul class="space-y-2">{r.items.map(i => <li class="flex items-start gap-2 text-sm text-neutral-600 dark:text-neutral-300"><span class="text-primary-500 mt-0.5 shrink-0">→</span>{i}</li>)}</ul></div>
+      ))}</div>
+    </div>
+  </section>
+</LandingLayout>
