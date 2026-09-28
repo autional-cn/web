@@ -34,7 +34,7 @@ export function useSEO(
 
 export const DEVELOPER_PORTAL_URL = 'https://developer.autional.cn';
 export const AUTH_PAGES_URL = 'https://auth.autional.cn';
-export const TRUST_CENTER_URL = 'https://www.autional.cn/trust';
+export const TRUST_CENTER_URL = 'https://trust.autional.cn';
 
 export function extractApiError(_err: unknown): string {
   return '发生错误';
