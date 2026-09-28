@@ -118,7 +118,7 @@ export default function TrustPage() {
             {t('trust.reportDesc')}
           </p>
           <a
-            href={`mailto:tianv@tianv.com?subject=${encodeURIComponent('合规信息咨询')}`}
+            href={`mailto:support@autional.net?subject=${encodeURIComponent('合规信息咨询')}`}
             className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary-600 px-6 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-primary-700"
           >
             {t('trust.reportBtn')}

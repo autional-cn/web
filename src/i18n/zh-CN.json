@@ -733,7 +733,7 @@
     "title": "常见问题",
     "subtitleIntro": "没有找到你需要的内容？",
     "subtitleLink": "联系我们",
-    "subtitleEnd": "tianv@tianv.com",
+    "subtitleEnd": "support@autional.net",
     "categoryProduct": "项目",
     "categorySecurity": "安全与合规",
     "categoryDeveloper": "开发者",
@@ -773,7 +773,7 @@
       "q15": "在哪里查看系统状态？",
       "a15": "你可以在<a href='/status' class='text-primary-600 hover:underline'>系统状态</a>页面查看所有服务的实时运行状态与历史事件记录。我们还提供 API 端点，便于接入你自己的监控系统",
       "q16": "如何报告安全漏洞？",
-      "a16": "如果你发现潜在的安全漏洞，请发送邮件至 tianv@tianv.com。我们承诺在 24 小时内确认收到，并在 72 小时内给出初步评估。详细的漏洞披露流程见安全与合规页面"
+      "a16": "如果你发现潜在的安全漏洞，请发送邮件至 support@autional.net。我们承诺在 24 小时内确认收到，并在 72 小时内给出初步评估。详细的漏洞披露流程见安全与合规页面"
     }
   },
   "showcase": {
@@ -1499,7 +1499,7 @@
   "faq.title": "常见问题",
   "faq.subtitleIntro": "没有找到你需要的内容？",
   "faq.subtitleLink": "联系我们",
-  "faq.subtitleEnd": "tianv@tianv.com",
+  "faq.subtitleEnd": "support@autional.net",
   "faq.categoryProduct": "项目",
   "faq.categorySecurity": "安全与合规",
   "faq.categoryDeveloper": "开发者",
@@ -1538,7 +1538,7 @@
   "faq.questions.q15": "在哪里查看系统状态？",
   "faq.questions.a15": "你可以在<a href='/status' class='text-primary-600 hover:underline'>系统状态</a>页面查看所有服务的实时运行状态与历史事件记录。我们还提供 API 端点，便于接入你自己的监控系统",
   "faq.questions.q16": "如何报告安全漏洞？",
-  "faq.questions.a16": "如果你发现潜在的安全漏洞，请发送邮件至 tianv@tianv.com。我们承诺在 24 小时内确认收到，并在 72 小时内给出初步评估。详细的漏洞披露流程见安全与合规页面",
+  "faq.questions.a16": "如果你发现潜在的安全漏洞，请发送邮件至 support@autional.net。我们承诺在 24 小时内确认收到，并在 72 小时内给出初步评估。详细的漏洞披露流程见安全与合规页面",
   "showcase.pageTitle": "案例展示",
   "showcase.pageDesc": "Autional 技术实践与项目展示。",
   "showcase.title": "技术展示",
