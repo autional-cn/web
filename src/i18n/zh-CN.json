@@ -44,7 +44,6 @@
     "featureHaDesc": "24 个微服务独立部署，高可用架构设计",
     "securityTitle": "从第一天起就安全",
     "securityDesc": "Autional 内置企业级安全能力：密码策略、设备指纹、风险评分、会话管理、异常检测与自动化响应 —— 让安全团队高枕无忧",
-    "securityItem1": "端到端加密与哈希链审计日志",
     "securityItem2": "实时风险评分与自适应 MFA",
     "securityItem3": "职责分离（SoD）与合规自动化",
     "securityItem4": "自动化安全扫描与 CI 门禁",
@@ -550,7 +549,6 @@
         "date": "2026-02-28",
         "items": {
           "0": "合规服务支持 GDPR、SOX 与 ISO27001 控制项映射",
-          "1": "端到端加密与静态数据 AES-256 加密",
           "2": "gRPC 接口覆盖全部核心服务"
         }
       }
@@ -643,7 +641,6 @@
     "section3Item3": "为保护 Autional、我们的用户或公众的权利、财产或安全",
     "section3Item4": "在合同约束下与第三方服务提供商（如基础设施提供商）共享",
     "section4Title": "4. 数据安全",
-    "section4Desc": "我们采用业界领先的安全措施保护你的数据，包括：传输中 TLS 1.3 加密、静态 AES-256 加密、bcrypt/scrypt 密码哈希、API 密钥加密存储、哈希链审计日志校验。我们定期开展安全审计与渗透测试，确保安全措施持续有效",
     "section5Title": "5. 数据保留",
     "section5Desc": "我们会在你的账号被删除之前或法律要求的期限内保留你的个人数据。账号删除后，我们将在 30 天内删除或匿名化你的个人数据，法律另有要求的除外",
     "section6Title": "6. 用户权利",
@@ -763,7 +760,6 @@
       "q10": "如何参与社区贡献？",
       "a10": "免费版最多支持 1,000 名月活跃用户（MAU），不含自定义品牌与域名，无 SLA 保障，审计日志保留 7 天。适合个人开发者与小型项目。更多细节见定价页面。",
       "q11": "项目如何保障安全？",
-      "a11": "符合 OWASP ASVS，采用 WebAuthn / PKCE / 哈希链审计日志、HIBP 密码强度策略、限流与 IP 白名单。定期开展安全审计与渗透测试。",
       "q12": "如何部署 Autional？",
       "a12": "Docker Compose 一键部署（包含 PostgreSQL、Redis、RabbitMQ），同时支持 Kubernetes Helm Charts。通过 YAML 与环境变量进行配置驱动。",
       "q13": "技术架构是怎样的？",
@@ -944,7 +940,6 @@
   "home.featureHaDesc": "24 个微服务独立部署，高可用架构设计",
   "home.securityTitle": "从第一天起就安全",
   "home.securityDesc": "Autional 内置企业级安全能力：密码策略、设备指纹、风险评分、会话管理、异常检测与自动化响应 —— 让安全团队高枕无忧",
-  "home.securityItem1": "端到端加密与哈希链审计日志",
   "home.securityItem2": "实时风险评分与自适应 MFA",
   "home.securityItem3": "职责分离（SoD）与合规自动化",
   "home.securityItem4": "自动化安全扫描与 CI 门禁",
@@ -1349,7 +1344,6 @@
   "changelog.releases.v0_9_0_rc2.items.2": "修复 MFA 服务在时间漂移较大时 TOTP 校验失败的问题",
   "changelog.releases.v0_9_0_rc1.date": "2026-02-28",
   "changelog.releases.v0_9_0_rc1.items.0": "合规服务支持 GDPR、SOX 与 ISO27001 控制项映射",
-  "changelog.releases.v0_9_0_rc1.items.1": "端到端加密与静态数据 AES-256 加密",
   "changelog.releases.v0_9_0_rc1.items.2": "gRPC 接口覆盖全部核心服务",
   "roadmap.pageTitle": "路线图",
   "roadmap.pageDesc": "Autional 产品路线图 —— 了解我们接下来要构建的功能",
@@ -1415,7 +1409,6 @@
   "privacy.section3Item3": "为保护 Autional、我们的用户或公众的权利、财产或安全",
   "privacy.section3Item4": "在合同约束下与第三方服务提供商（如基础设施提供商）共享",
   "privacy.section4Title": "4. 数据安全",
-  "privacy.section4Desc": "我们采用业界领先的安全措施保护你的数据，包括：传输中 TLS 1.3 加密、静态 AES-256 加密、bcrypt/scrypt 密码哈希、API 密钥加密存储、哈希链审计日志校验。我们定期开展安全审计与渗透测试，确保安全措施持续有效",
   "privacy.section5Title": "5. 数据保留",
   "privacy.section5Desc": "我们会在你的账号被删除之前或法律要求的期限内保留你的个人数据。账号删除后，我们将在 30 天内删除或匿名化你的个人数据，法律另有要求的除外",
   "privacy.section6Title": "6. 用户权利",
@@ -1528,7 +1521,6 @@
   "faq.questions.q10": "如何参与社区贡献？",
   "faq.questions.a10": "免费版最多支持 1,000 名月活跃用户（MAU），不含自定义品牌与域名，无 SLA 保障，审计日志保留 7 天。适合个人开发者与小型项目。更多细节见定价页面。",
   "faq.questions.q11": "项目如何保障安全？",
-  "faq.questions.a11": "符合 OWASP ASVS，采用 WebAuthn / PKCE / 哈希链审计日志、HIBP 密码强度策略、限流与 IP 白名单。定期开展安全审计与渗透测试。",
   "faq.questions.q12": "如何部署 Autional？",
   "faq.questions.a12": "Docker Compose 一键部署（包含 PostgreSQL、Redis、RabbitMQ），同时支持 Kubernetes Helm Charts。通过 YAML 与环境变量进行配置驱动。",
   "faq.questions.q13": "技术架构是怎样的？",
