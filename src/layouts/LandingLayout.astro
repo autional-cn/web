@@ -65,8 +65,11 @@ const allJsonLd = [defaultJsonLd, ...jsonLd];
   <link rel="alternate" type="application/rss+xml" title="Autional 博客" href="/rss.xml" />
 </head>
 <body class="flex min-h-screen flex-col text-neutral-900 dark:text-white">
-  <header class="sticky top-0 z-50 px-3 py-3 sm:px-6">
-    <div class="relative mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/70 bg-white/80 px-4 py-3 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/70 sm:px-6">
+  {/* 顶栏高度此前由内层胶囊的 py-3 撑开（约 48px），与其余 13 个门户的 64px 不一致。
+       改为令牌高度 + flex 居中；内层胶囊用 h-full 填满**减去 py-2 后的内容盒**（48px），
+       于是外框 64px、胶囊仍悬浮——保留本站的营销站观感，同时与外框节奏对齐。 */}
+    <header class="sticky top-0 z-50 flex h-[var(--layout-header-height)] items-center px-3 py-2 sm:px-6">
+    <div class="relative mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/70 bg-white/80 h-full px-4 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/70 sm:px-6">
       <a href="/" class="flex items-center gap-3">
         <img src="/logo-mark.svg" alt="Autional 徽标" class="h-10 w-10 object-contain drop-shadow-[0_8px_18px_rgba(0,49,83,0.18)]" />
         <div class="hidden sm:block">
