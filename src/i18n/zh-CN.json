@@ -4,6 +4,7 @@
   "nav.docs": "文档",
   "nav.blog": "博客",
   "nav.contact": "联系我们",
+  "nav.ai": "AI 接入",
   "search.placeholder": "搜索页面、博客文章…",
   "search.noResults": "未找到与「{{query}}」相关的结果",
   "search.hotSearches": "热门搜索",
@@ -65,5 +66,8 @@
   "search.index.14.excerpt": "DSAR 处理最佳实践",
   "search.index.15.title": "定价方案",
   "search.index.15.category": "页面",
-  "search.index.15.excerpt": "免费版、专业版与企业版。随业务成长弹性扩展，没有隐藏费用"
+  "search.index.15.excerpt": "免费版、专业版与企业版。随业务成长弹性扩展，没有隐藏费用",
+  "search.index.16.title": "AI 接入",
+  "search.index.16.category": "页面",
+  "search.index.16.excerpt": "一句话为应用接入登录"
 }
