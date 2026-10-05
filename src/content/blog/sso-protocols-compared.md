@@ -271,4 +271,4 @@ oauth-service (Port 11006)
 
 协议是手段，不是目的。选 SAML 不是因为 XML 优雅，选 OIDC 也不是因为 JWT 时髦。选择最契合你的用户技术栈、你的合规要求和你的工程能力的协议——如果用户需要多种协议，就选一个全都支持的平台。Autional 把四种协议统一在 `oauth-service` 中，你不需要为每种协议各维护一套身份系统。
 
-*Autional oauth-service 为企业客户提供完整的 OAuth 2.0、OIDC、SAML 2.0 与 CAS 协议支持。接入指南见[开发者文档](/developer/docs/oauth-service)。*
+*Autional oauth-service 为企业客户提供完整的 OAuth 2.0、OIDC、SAML 2.0 与 CAS 协议支持。接入指南见[开发者文档](https://developer.autional.cn/api)。*

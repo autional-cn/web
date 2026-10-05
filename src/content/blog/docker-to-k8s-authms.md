@@ -36,7 +36,7 @@ pnpm dev:auth
 docker compose -f docker-compose.infra.yml up -d
 ```
 
-这个文件里只有基础设施容器——15 个微服务没有一个通过 Docker 运行，它们都是直接在 Windows 上跑的原生 Go 二进制。好处是：
+这个文件里只有基础设施容器——27 个微服务没有一个通过 Docker 运行，它们都是直接在 Windows 上跑的原生 Go 二进制。好处是：
 - 近乎零延迟的热重载（Go 编译通常 < 5s）
 - 可直接用 delve 调试器打断点调试
 - 环境变量与配置文件直接从本地文件系统读取
@@ -45,9 +45,9 @@ docker compose -f docker-compose.infra.yml up -d
 
 当需要部署到测试环境或小型生产环境时，Docker Compose 是最简单的选择。
 
-### 统一 Dockerfile：15 个服务共用一套模板
+### 统一 Dockerfile：27 个服务共用一套模板
 
-Autional 有 15 个微服务，但只有**一个 Dockerfile**（位于 `docker/Dockerfile.service`）。所有差异都通过构建参数实现：
+Autional 有 27 个微服务，但只有**一个 Dockerfile**（位于 `docker/Dockerfile.service`）。所有差异都通过构建参数实现：
 
 ```dockerfile
 ARG SERVICE_NAME          # e.g., identity-service
@@ -65,7 +65,7 @@ docker build \
   -t authms/identity-service:latest .
 ```
 
-这个设计的核心价值是：**新增一个服务不需要新增 Dockerfile。** 只要服务遵循标准目录结构（`micro-services/{name}/cmd/server/main.go`），构建系统就会自动适配。15 个服务共用同一份构建层缓存（Go 依赖缓存、构建缓存），因此在构建完第一个服务后，用 `--build-arg` 构建第二个服务只需几秒。
+这个设计的核心价值是：**新增一个服务不需要新增 Dockerfile。** 只要服务遵循标准目录结构（`micro-services/{name}/cmd/server/main.go`），构建系统就会自动适配。27 个服务共用同一份构建层缓存（Go 依赖缓存、构建缓存），因此在构建完第一个服务后，用 `--build-arg` 构建第二个服务只需几秒。
 
 ### 多阶段构建细节
 
@@ -106,7 +106,7 @@ services:
       - "11001:11001"
 ```
 
-这样 15 个服务的定义都保持非常精简——每个只有 10-15 行，主体配置通过锚点复用。
+这样 27 个服务的定义都保持非常精简——每个只有 10-15 行，主体配置通过锚点复用。
 
 ### Docker Compose 的局限
 
@@ -289,4 +289,4 @@ kompose convert -f docker-compose.yml -o k8s/
 
 ---
 
-*Autional 提供三种部署方式：Docker Compose、Kubernetes Helm Chart，以及云市场一键部署。请访问[快速开始指南](/developer/docs/getting-started)开始使用。*
+*Autional 支持从单机 Docker Compose 到生产级 Kubernetes 集群的多种部署形态。请访问[快速开始指南](https://developer.autional.cn/quickstart)开始使用。*

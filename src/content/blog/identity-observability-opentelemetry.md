@@ -159,4 +159,4 @@ Autional 的可观测体系仍在演进。接下来的里程碑包括：
 
 ---
 
-*15 个 Autional 微服务全部内置 OpenTelemetry 支持，开箱即用。了解如何将 Autional 认证集成到你的应用中，请参阅[开发者文档](/developer/docs)。*
+*27 个 Autional 微服务全部内置 OpenTelemetry 支持，开箱即用。了解如何将 Autional 认证集成到你的应用中，请参阅[快速开始指南](https://developer.autional.cn/quickstart)。*

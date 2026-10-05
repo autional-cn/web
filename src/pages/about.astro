@@ -1,21 +1,17 @@
 ---
 import LandingLayout from '../layouts/LandingLayout.astro';
+import { FUTURE_ROADMAP } from '../lib/product-roadmap';
 const milestones = [
   { date: '2024 Q1', title: '项目启动', desc: '核心认证引擎开始研发。Autional 诞生于对基于 Go 构建的开源身份平台的需求。' },
-  { date: '2024 Q4', title: 'Alpha 版本发布', desc: '首个公开版本，包含 SSO、MFA 与 RBAC。14 个微服务覆盖核心身份生命周期。' },
-  { date: '2025 Q2', title: '开源发布', desc: '核心模块以 AGPL 协议开源，社区采用随之起步，GitHub Star 自然增长。' },
-  { date: '2026 Q1', title: 'Autional 发布', desc: '品牌升级为 Autional —— 面向 AI 生成应用的身份层。24 个服务、1,400+ API、完整的企业级合规能力。' },
+  { date: '2024 Q4', title: 'Alpha 版本', desc: '首个版本，包含 SSO、MFA 与 RBAC，覆盖核心身份生命周期。' },
+  { date: '2025 Q2', title: '开源发布', desc: '门户、设计系统与 SDK 以 AGPL-3.0 协议开源，代码托管在 GitHub 组织页。' },
+  { date: '2026 Q1', title: 'Autional 发布', desc: '品牌升级为 Autional —— 面向 AI 生成应用的身份层。27 个服务、1,400+ API、企业级合规能力。' },
 ];
 const values = [
-  { icon: '🔓', title: '开放优先', desc: '源代码、架构与路线图全部开放。没有黑盒、没有隐藏定价、没有厂商锁定。' },
+  { icon: '🔓', title: '开放优先', desc: '门户、设计系统与 SDK 以 AGPL-3.0 开源发布；路线图公开，没有隐藏定价，没有厂商锁定。' },
   { icon: '⚡', title: 'AI 原生', desc: '为 AI 时代而生。从 Bolt 到 Cursor，从 MVP 到企业级 —— 身份能力始终跟得上 AI 速度的开发节奏。' },
-  { icon: '🤝', title: '开发者体验', desc: '10 分钟集成。自动生成 SDK。类型安全的 API。像产品而不像平台的身份基础设施。' },
+  { icon: '🤝', title: '开发者体验', desc: '10 分钟集成。类型安全的 API。像产品而不像平台的身份基础设施。' },
   { icon: '🔒', title: '默认安全', desc: '企业级安全，却没有企业级的复杂度。哈希链审计、自适应 MFA、多租户隔离 —— 内建设计，而非事后外挂。' },
-];
-const roadmap = [
-  { period: '2026 Q3', items: ['Autional MCP Server —— 与 AI 编码工具自动集成', 'Bolt.new 与 Lovable.dev 模板', 'React SDK v1.0', '管理控制台改版'] },
-  { period: '2026 Q4', items: ['Autional Cloud 公测', 'Vue 与 Next.js SDK', 'WebAuthn 通行密钥透传', 'SOC 2 Type II 审计'] },
-  { period: '2027 H1', items: ['Go 与 Python SDK', '多区域云部署', 'AI 智能体认证（NHI）', '企业级审计归档'] },
 ];
 ---
 <LandingLayout title="关于 — Autional" description="Autional 是面向 AI 生成应用的身份层。了解我们的故事、使命与路线图。" keywords="Autional, 关于, 身份, IAM, 开源, 使命, 团队">
@@ -45,7 +41,7 @@ const roadmap = [
     </div>
     <!-- Roadmap -->
     <div><h2 class="text-2xl font-bold text-center mb-12">路线图</h2>
-      <div class="grid gap-6 md:grid-cols-3">{roadmap.map(r => (
+      <div class="grid gap-6 md:grid-cols-3">{FUTURE_ROADMAP.map(r => (
         <div class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-6"><div class="text-sm font-semibold text-primary-600 mb-3">{r.period}</div><ul class="space-y-2">{r.items.map(i => <li class="flex items-start gap-2 text-sm text-neutral-600 dark:text-neutral-300"><span class="text-primary-500 mt-0.5 shrink-0">→</span>{i}</li>)}</ul></div>
       ))}</div>
     </div>

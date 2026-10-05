@@ -124,11 +124,11 @@ const sections = [
   {
     title: '开发者平台',
     icon: '⚡',
-    desc: '1,400+ API、30+ 个 SDK 软件包、gRPC 网格、自动生成的 TypeScript 类型。',
+    desc: '1,400+ API、npm SDK 软件包、gRPC 网格、自动生成的 TypeScript 类型。',
     items: [
-      '24 个微服务共 1,400+ 个 RESTful API 端点，带版本管理且文档完备',
+      '27 个微服务共 1,400+ 个 RESTful API 端点，带版本管理且文档完备',
       'gRPC 服务网格 —— 9 个微服务提供 gRPC 接口',
-      'SDK：30+ 个 npm 软件包 —— React、Vue、Next.js、Svelte、React Native、MiniApp、Node.js + 19 个 api-*',
+      'SDK：已发布 @autional-cn/react 等 npm 软件包；Vue、Next.js 等框架适配在路线图中',
       '自动生成的 TypeScript 类型 —— 基于 OpenAPI 规范（38K+ 行）',
       '600+ 种 Webhook 事件类型 —— 全服务统一 HMAC 签名投递',
       'Swagger/OpenAPI —— 每个端点都有交互式文档',
@@ -155,22 +155,17 @@ const sections = [
   <section class="mx-auto max-w-7xl px-4 py-20">
     <div class="text-center mb-16">
       <h1 class="text-4xl font-bold tracking-tight sm:text-5xl text-balance">企业级身份基础设施。<br/>开源。</h1>
-      <p class="mx-auto mt-4 max-w-3xl text-lg text-neutral-500">24 个微服务、1,400+ API、30+ 个 SDK 软件包、15+ 个合规框架 —— 你的 AI 生成应用在身份方面需要的一切。</p>
+      <p class="mx-auto mt-4 max-w-3xl text-lg text-neutral-500">27 个微服务、1,400+ API、npm SDK 软件包、15+ 个合规框架 —— 你的 AI 生成应用在身份方面需要的一切。</p>
     </div>
-    <div class="space-y-20">
-      {sections.map((s, i) => (
-        <div class="grid gap-8 lg:grid-cols-2 items-start">
-          <div class={i % 2 === 0 ? '' : 'lg:order-last'}>
-            <div class="text-4xl mb-4">{s.icon}</div>
-            <h2 class="text-2xl font-bold mb-3">{s.title}</h2>
-            <p class="text-neutral-500 leading-relaxed mb-4">{s.desc}</p>
-            <ul class="space-y-2">
-              {s.items.map(item => <li class="flex items-start gap-2 text-sm"><span class="text-primary-500 mt-0.5 shrink-0">✓</span><span>{item}</span></li>)}
-            </ul>
-          </div>
-          <div class="rounded-2xl bg-neutral-50 dark:bg-slate-900 p-16 min-h-[200px] border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
-            <span class="text-sm text-neutral-400">[ 示意图 ]</span>
-          </div>
+    <div class="space-y-10">
+      {sections.map((s) => (
+        <div class="rounded-3xl border border-neutral-200 dark:border-neutral-800 p-8 sm:p-10">
+          <div class="text-4xl mb-4">{s.icon}</div>
+          <h2 class="text-2xl font-bold mb-3">{s.title}</h2>
+          <p class="text-neutral-500 leading-relaxed mb-4 max-w-3xl">{s.desc}</p>
+          <ul class="grid gap-2 sm:grid-cols-2">
+            {s.items.map(item => <li class="flex items-start gap-2 text-sm"><span class="text-primary-500 mt-0.5 shrink-0">✓</span><span>{item}</span></li>)}
+          </ul>
         </div>
       ))}
     </div>

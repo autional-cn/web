@@ -9,6 +9,14 @@ const skillEnMd = readFileSync(resolve(process.cwd(), 'public/ai/skill.en.md'), 
 const promptEn = `Fetch https://www.autional.cn/ai/skill.en.md and follow it to add Autional login to this project. If unreachable, use:
 https://cdn.autional.cn/ai/latest/SKILL.en.md`;
 
+// hreflang 互指（T-03）：/ai/en 与 /ai 互指，x-default 指中文主版本
+const site = Astro.site!;
+const alternates = [
+  { hreflang: 'en', href: new URL('/ai/en/', site).href },
+  { hreflang: 'zh-CN', href: new URL('/ai/', site).href },
+  { hreflang: 'x-default', href: new URL('/ai/', site).href },
+];
+
 const phases = [
   { n: '0', title: 'Safety net first', desc: 'Git branch, toolkit check, risk disclosure — every change is reversible.' },
   { n: '1', title: 'Inspect your app', desc: 'Framework, existing auth, conflicts, and what the integration will change.' },
@@ -36,6 +44,8 @@ const checklist = [
   title="AI Onboarding — Autional"
   description="Add Autional login and multi-user support to your app with one prompt. Works with Claude Code, Cursor, OpenCode, and any AI coding agent. Includes an own-CDN fallback."
   keywords="Autional, AI onboarding, Claude Code, Cursor, AI coding agent, authentication, login, multi-user, OIDC, own-CDN fallback"
+  lang="en"
+  alternates={alternates}
 >
   <section class="mx-auto max-w-4xl px-4 py-20">
     <!-- Language / region switch -->

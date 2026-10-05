@@ -39,7 +39,7 @@ claims_reviewed: true
 
 **自研成本**：1-2 周（1 名全栈工程师），涵盖注册/登录页、密码哈希、会话存储与中间件。
 
-**Autional 免费版**：用 Autional 的 identity-service 做用户注册与登录，session-service 做会话管理。无需额外的 MFA 或 SSO。30 分钟完成接入。
+**Autional 开源自托管（免费）**：用 Autional 的 identity-service 做用户注册与登录，session-service 做会话管理。无需额外的 MFA 或 SSO。30 分钟完成接入。
 
 **关键提醒**：即使在阶段一，有些基础设施决策也是难以回头的：
 
@@ -63,7 +63,7 @@ claims_reviewed: true
 
 **自研成本**：3-6 个月（2-3 名工程师）。仅 SAML SSO 集成一项就远比想象中复杂——每个 IdP 都有自己的脾气（Azure AD、Okta、OneLogin、PingIdentity……），而 SSO 的调试通常需要和企业客户的 IT 团队来回拉锯。
 
-**Autional Pro 版**：启用 mfa-service（TOTP + Passkey），配置 RBAC 细粒度角色，开通 oauth-service 提供 OIDC/SAML SSO，启用 audit-service 记录审计日志。无需改代码——只需配置。
+**Autional 进阶能力**：启用 mfa-service（TOTP + Passkey），配置 RBAC 细粒度角色，开通 oauth-service 提供 OIDC/SAML SSO，启用 audit-service 记录审计日志。无需改代码——只需配置。
 
 **SAML SSO 的隐性成本**：每接入一家企业客户的 SSO：
 
@@ -86,7 +86,7 @@ claims_reviewed: true
 
 **自研成本**：12 个月以上（3-5 名专职工程师）。这已不再是「SaaS 产品的一部分」——它变成了「一个独立的身份平台」。
 
-**Autional 企业版**：compliance-service 覆盖 SOC 2/ISO 27001/GDPR 合规自动化。通过数据驻留策略实现多地域部署。通过 tenant-service 与 identity-service 的层级角色体系支持多租户 + 多产品。
+**Autional 企业级能力**：compliance-service 覆盖 SOC 2/ISO 27001/GDPR 合规自动化。通过数据驻留策略实现多地域部署。通过 tenant-service 与 identity-service 的层级角色体系支持多租户 + 多产品。
 
 > **接入说明**：本文的工作量估算与价格参考基于典型行业场景。实际接入时间与成本会因存量系统复杂度、团队经验、业务规模等因素而变化。具体合规认证要求以属地监管机构的最新指引为准。
 
@@ -106,14 +106,14 @@ claims_reviewed: true
 
 ### 使用 Autional
 
-| 阶段 | 版本 | 年费 | 接入时间 |
+| 阶段 | 方案 | 费用 | 接入时间 |
 |-------|------|------------|------------------|
-| 阶段一 | 免费版 | ¥0 | 1 天 |
-| 阶段二 | Pro 版 | ¥36,000/年 | 仅配置 |
-| 阶段三 | 企业版 | ¥120,000/年 | 专业部署 |
-| **3 年合计** | | **约 ¥468,000** | |
+| 阶段一 | 开源自托管 | ¥0 | 1 天 |
+| 阶段二 | 进阶能力 | 商业授权另议 | 仅配置 |
+| 阶段三 | 企业级能力 | 商业授权另议 | 专业部署 |
+| **3 年合计** | | **以商务报价为准** | |
 
-自研成本是 Autional 的 3.2 倍——而这还没算上这些隐性成本：
+自研的总体成本明显高于采购——而这还没算上这些隐性成本：
 
 - 安全漏洞的响应时间（自研意味着只能靠自己）
 - 合规认证被拒后的返工成本
@@ -148,7 +148,7 @@ claims_reviewed: true
 
 ## Autional 如何伴随你的 SaaS 成长
 
-Autional 的设计理念是「渐进式采用」——你不需要第一天就上齐 15 个微服务：
+Autional 的设计理念是「渐进式采用」——你不需要第一天就上齐 27 个微服务：
 
 ```
 Phase 1 (MVP)          Phase 2 (Growth)         Phase 3 (Enterprise)
@@ -173,4 +173,4 @@ session-service        + oauth-service          + tenant-service
 2. **选择能陪你成长的平台**，而不是「大而全但用不上」的方案
 3. **把工程时间花在核心业务上**——身份的事交给专业的人
 
-Autional 为 SaaS 创始人提供了一条清晰的路径：从免费版的快速起步，到 Pro 版的企业级能力，再到企业版的全球合规——你的身份系统随业务一同演进。
+Autional 为 SaaS 创始人提供了一条清晰的路径：从免费自托管快速起步，到企业级 SSO、合规与私有化部署——云托管（路线图中）开放后，身份系统还能随业务托管演进。

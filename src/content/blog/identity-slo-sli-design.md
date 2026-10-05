@@ -153,4 +153,4 @@ Autional 为每个服务提供两个独立的健康检查端点：
 
 ---
 
-*所有 Autional 服务都内置双探针健康检查与 Prometheus 指标暴露。更多细节请参阅[架构文档](/developer/docs)。*
+*所有 Autional 服务都内置双探针健康检查与 Prometheus 指标暴露。更多细节请参阅[平台文档](https://docs.autional.cn)。*

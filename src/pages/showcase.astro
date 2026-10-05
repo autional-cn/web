@@ -1,18 +1,33 @@
 ---
 import Layout from '../layouts/LandingLayout.astro';
+const stats = [
+  ['27', '微服务'],
+  ['1,400+', 'API 端点'],
+  ['Go / TypeScript', '技术栈'],
+  ['AGPL-3.0', '开源'],
+];
+const entries = [
+  { title: '全服务 Demo 总入口', desc: '逐一体验各服务的演示环境 —— 认证、企业级访问、审计与更多。', href: 'https://demo.autional.cn', label: '打开演示门户' },
+  { title: '平台文档门户', desc: '部署形态、配置机制与运维指南的完整文档。', href: 'https://docs.autional.cn', label: '访问文档门户' },
+  { title: '开发者快速开始', desc: '从安装到第一个登录流程的完整接入指南。', href: 'https://developer.autional.cn/quickstart', label: '查看快速开始' },
+  { title: 'API 参考', desc: '1,400+ 个 REST API 端点，交互式 Swagger/OpenAPI 文档。', href: 'https://reference.autional.cn', label: '浏览 API 参考' },
+  { title: '功能总览', desc: 'SSO、MFA、通行密钥（Passkey）、RBAC、NHI、多租户、审计、合规 —— 完整的身份管理能力。', href: '/features', label: '浏览功能特性' },
+  { title: 'SDK 与 npm 软件包', desc: '@autional-cn/react 等已发布组件，均可直接安装。', href: '/sdk', label: '查看 SDK' },
+];
 ---
-<Layout title="技术展示 — Autional" description="Autional 身份平台能力的真实技术展示。" keywords="Autional, 展示, 演示, 身份, 认证, IAM, 企业">
+<Layout title="技术展示 — Autional" description="Autional 身份平台的真实演示与文档入口。" keywords="Autional, 展示, 演示, 身份, 认证, IAM, 企业">
   <section class="mx-auto max-w-5xl px-4 py-20 text-center">
     <h1 class="text-4xl font-bold sm:text-5xl">技术展示</h1>
-    <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-500">Autional 身份平台在真实场景下的能力与功能演示。</p>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-500">从真实演示到完整文档 —— 亲手体验 Autional 的每一项能力。</p>
     <div class="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-      {[['1,400+','API 端点'],['24','微服务'],['Go / TypeScript','技术栈'],['AGPL-3.0','开源']].map(([v,l]) => (
+      {stats.map(([v,l]) => (
         <div class="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-slate-900 p-6 shadow-sm"><div class="text-3xl font-bold text-primary-600">{v}</div><div class="mt-1 text-sm text-neutral-500">{l}</div></div>
       ))}
     </div>
-    <div class="mt-16 grid gap-6 sm:grid-cols-2 text-left">
-      <div class="rounded-xl border border-neutral-200 dark:border-neutral-800 p-6"><h3 class="font-semibold">开发者文档</h3><p class="mt-2 text-sm text-neutral-500">1,400+ 个 REST API 端点，支持 gRPC，提供交互式 Swagger 文档与自动生成的 TypeScript 类型。</p><a href="/docs" class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700">查看文档 →</a></div>
-      <div class="rounded-xl border border-neutral-200 dark:border-neutral-800 p-6"><h3 class="font-semibold">功能总览</h3><p class="mt-2 text-sm text-neutral-500">SSO、MFA、通行密钥（Passkey）、RBAC、NHI、多租户、审计、合规 —— 完整的身份管理能力。</p><a href="/features" class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700">浏览功能特性 →</a></div>
+    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-left">
+      {entries.map(e => (
+        <div class="flex flex-col rounded-xl border border-neutral-200 dark:border-neutral-800 p-6"><h3 class="font-semibold">{e.title}</h3><p class="mt-2 flex-1 text-sm text-neutral-500">{e.desc}</p><a href={e.href} class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700">{e.label} →</a></div>
+      ))}
     </div>
   </section>
 </Layout>

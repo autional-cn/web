@@ -150,16 +150,17 @@ Autional 的 `mfa-service` 支持以下四种认证方式，可在策略中灵�
 
 ## 快速开始
 
-Autional 提供了覆盖主流语言与框架的完整 SDK 与文档。无论你的系统使用 Node.js、Python、Java、Go 还是 PHP，都有对应的快速开始指南。
+Autional 提供了完整的文档与快速开始指南，并已发布 @autional-cn/react 等 npm 软件包。前端应用可以直接安装使用；其他技术栈通过标准 OAuth 2.0 / OIDC 流程接入。
 
 ```bash
-# Three steps to set up a local dev environment
-git clone https://github.com/autional-cn/sdk
-cd sdk/demo
-docker compose up -d
+# 安装 React SDK（其他技术栈通过标准 OAuth 2.0 / OIDC 流程接入）
+npm install @autional-cn/react
+
+# 本地演示环境：完整启动步骤见快速开始指南
+# https://developer.autional.cn/quickstart
 ```
 
-访问 `http://localhost:11080`，30 分钟内体验从用户注册到 MFA 部署的完整流程。
+部署完成后，即可在演示环境中体验从用户注册到 MFA 部署的完整流程。
 
 ---
 

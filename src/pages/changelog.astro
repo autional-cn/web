@@ -1,64 +1,37 @@
 ---
 import LandingLayout from '../layouts/LandingLayout.astro';
 
+// 发布记录口径（CH-01）：只列产品与开源组件的真实发布，不含本站工程日志；
+// npm 组件条目以 npm publish time 实查为准（2026-10-05 核对）。
 const changelog = [
+  { date: '2026-10-05', version: '开源组件发布', items: [
+    '@autional-cn/onboard 0.1.0 —— 项目初始化 CLI 首发',
+    '@autional-cn/tokens 0.1.0-rc.7 发布',
+  ]},
+  { date: '2026-10-04', version: '开源组件发布', items: [
+    '@autional-cn/ui 0.1.0-rc.38 发布',
+    '@autional-cn/shared 0.1.0-rc.26 发布',
+  ]},
+  { date: '2026-10-03', version: '开源组件发布', items: [
+    '@autional-cn/tailwind-preset 0.1.0-rc.2 发布',
+  ]},
+  { date: '2026-09-29', version: '开源组件首发', items: [
+    '@autional-cn/react 0.1.0-rc 发布 —— React SDK 登陆 npm',
+    '@autional-cn/ui、@autional-cn/tokens、@autional-cn/tailwind-preset、@autional-cn/shared 首个 rc 版本发布',
+  ]},
   { date: '2026-06-30', version: '2.0.0-rc.1', items: [
-    '试用注册系统 —— 邀请码流程、自动清理调度器',
-    '演示租户供给，管理控制台新增试用管理页面',
-    'SDK 新增 upgradeTrial 端点，支持从 Free 平滑升级到 Pro',
     '网关 CORS 默认对所有来源开启',
-    'DNS 解析加固 —— 遥测/数据库/Redis 统一防阻断',
+    'DNS 解析加固 —— 遥测、数据库与 Redis 统一防阻断',
     '启用 GOMEMLIMIT 以防止 OOM',
     '租户连接池韧性改进',
-    'Autional 品牌发布 —— 全新的定价、对比与关于页面',
-    '英文博客：翻译 48 篇文章，新增 1 篇原创企业 SSO 文章',
-    'CookieConsent 移至文档根节点（固定定位）',
-    '英文内容摘要长度上限由 300 提升至 500',
-  ]},
-  { date: '2026-06-28', version: '2.0.0-dev', items: [
-    'Web/ 拆分为独立子仓库（github.com/autional-cn/web）',
-    '脚本迁移至 web/scripts/，通过薄封装保持向后兼容',
-    'Astro SSG 站点共 79 个页面（64 个中文 + 15 个英文）',
-    'SEO 基础设施：站点地图、RSS、OG 标签、hreflang、JSON-LD',
-    '交互组件：ThemeToggle、LanguageSwitcher、SearchModal、CookieConsent',
-    '博客内容接入 Tailwind typography 插件',
-    'useScrollAnimation 的 SSR 修复 —— 内容立即可见（移除 opacity-0）',
-    '英文站点首次部署到 Vercel',
-    '为 *.autional.local 签发 100 年有效期 SSL 证书（本地开发）',
-  ]},
-  { date: '2026-06-20', version: '1.2.0', items: [
-    '48 篇博客文章由中文翻译为英文（9 个并行子任务）',
-    '内容集合 schema，使用 Zod 校验',
-    '博客分类筛选：Tech、Architecture、Compliance、Product、Security、Project',
-    '精选文章头部组件',
-    '内部 API 认证：为独立站点提供 @authms/shared 桩实现',
-    'ThemeToggle 组件复制实现（不再依赖 @authms/ui）',
-  ]},
-  { date: '2026-06-15', version: '1.1.0', items: [
-    'Astro SSG 博客，含 4 篇原创英文文章',
-    'RSS 订阅源与站点地图生成',
-    '博客详情模板，含 JSON-LD Article schema',
-    'PageShell React 封装，用于旧版认证页面',
-    'i18next 英文初始化，使用 en-US.json',
-    'Tailwind CSS，采用蓝色主色调',
-    'EdgeOne 部署文件（middleware.js、edgeone.json）',
-  ]},
-  { date: '2026-06-07', version: '1.0.0', items: [
-    '站点由 Vite CSR 迁移至 Astro SSG',
-    'Docker 多域名 nginx，含 6 个 server 块',
-    '语言检测与 hreflang 支持',
-    '48 篇博客文章完成合规免责声明审查',
-    '首页 Hero、功能网格、数据统计、CTA',
-    '企业 SSO / MFA / RBAC 功能页面',
-    '对比、定价、关于、信任、路线图页面',
   ]},
 ];
 ---
-<LandingLayout title="更新日志 — Autional" description="Autional 身份平台的版本历史与发布说明。" keywords="Autional, 更新日志, 发布, 更新, 版本历史, 身份">
+<LandingLayout title="更新日志 — Autional" description="Autional 平台与开源组件的版本发布记录。" keywords="Autional, 更新日志, 发布, 更新, 版本历史, 身份">
   <section class="mx-auto max-w-3xl px-4 py-20">
     <div class="text-center mb-16">
       <h1 class="text-4xl font-bold sm:text-5xl">更新日志</h1>
-      <p class="mt-4 text-lg text-neutral-500 max-w-xl mx-auto">Autional 身份平台的版本历史与发布说明。每个版本都对应 <a href="https://github.com/autional-cn" class="text-primary-600 hover:underline">GitHub 仓库</a>中的一个标签发布。</p>
+      <p class="mt-4 text-lg text-neutral-500 max-w-xl mx-auto">Autional 平台与开源组件的版本发布记录。npm 软件包随迭代滚动发布，明细可在 <a href="https://www.npmjs.com/search?q=%40autional-cn" class="text-primary-600 hover:underline">npm</a> 与 <a href="https://github.com/autional-cn" class="text-primary-600 hover:underline">GitHub 组织页</a>查看。</p>
     </div>
     <div class="space-y-12">
       {changelog.map(v => (

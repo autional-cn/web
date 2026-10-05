@@ -4,9 +4,12 @@ import '../i18n';
 import { useTranslation } from 'react-i18next';
 import { ThemeToggle } from '../components/ThemeToggle';
 import SearchModal from '../components/SearchModal';
+import type { SearchItem } from '../lib/search-index';
 
+// 移动端首层菜单与桌面导航对齐（含 SDK 与 GitHub 外链）
 const navLinks = [
   { href: '/features', labelKey: 'nav.features' },
+  { href: '/sdk', labelKey: 'nav.sdk' },
   { href: '/pricing', labelKey: 'nav.pricing' },
   { href: '/docs', labelKey: 'nav.docs' },
   { href: '/blog', labelKey: 'nav.blog' },
@@ -14,7 +17,11 @@ const navLinks = [
   { href: '/ai', labelKey: 'nav.ai' },
 ];
 
-export default function ClientShell() {
+const externalLinks = [
+  { href: 'https://github.com/autional-cn', label: 'GitHub' },
+];
+
+export default function ClientShell({ searchIndex }: { searchIndex: SearchItem[] }) {
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(() => {
@@ -50,6 +57,11 @@ export default function ClientShell() {
                 className="block rounded-2xl px-3 py-2.5 text-base font-medium text-neutral-700 transition-colors hover:bg-sky-50 hover:text-primary-700 dark:text-neutral-300 dark:hover:bg-white/10"
               >{t(link.labelKey)}</a>
             ))}
+            {externalLinks.map((link) => (
+              <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}
+                className="block rounded-2xl px-3 py-2.5 text-base font-medium text-neutral-700 transition-colors hover:bg-sky-50 hover:text-primary-700 dark:text-neutral-300 dark:hover:bg-white/10"
+              >{link.label} ↗</a>
+            ))}
           </div>
         </div>
       )}
@@ -75,7 +87,7 @@ export default function ClientShell() {
           <ChevronUp className="h-5 w-5" />
         </button>
       )}
-      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} items={searchIndex} />
     </>
   );
 }

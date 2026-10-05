@@ -1,10 +1,10 @@
 ---
-title: "16 个微服务如何优雅停机？Autional 统一启动框架拆解"
+title: "27 个微服务如何优雅停机？Autional 统一启动框架拆解"
 date: "2026-05-12"
 category: "Architecture"
 tags: ["优雅停机", "运维", "可靠性"]
 readTime: "7 分钟"
-excerpt: "当 Kubernetes 发出 SIGTERM 时，你的微服务是直接暴毙，还是在 30 秒内优雅收尾？Autional 的统一 Application 启动框架让 16 个服务都能优雅停机——涵盖 HTTP 请求排空、MQ 消息处理完成、gRPC 连接关闭与数据库连接池释放。"
+excerpt: "当 Kubernetes 发出 SIGTERM 时，你的微服务是直接暴毙，还是在 30 秒内优雅收尾？Autional 的统一 Application 启动框架让 27 个服务都能优雅停机——涵盖 HTTP 请求排空、MQ 消息处理完成、gRPC 连接关闭与数据库连接池释放。"
 status: verified
 reviewed_by: "butler-exec"
 claims_reviewed: true
@@ -17,7 +17,7 @@ claims_reviewed: true
 - gRPC 流中途断开，下游服务收到 `UNAVAILABLE` 错误
 - 数据库连接池被暴力关闭，未提交的事务被回滚
 
-Autional 的 16 个微服务通过统一的 `micro-middleware/app` 启动框架实现了 **零停机优雅停机**。
+Autional 的 27 个微服务通过统一的 `micro-middleware/app` 启动框架实现了 **零停机优雅停机**。
 
 ## 暴力停机 vs 优雅停机
 
@@ -316,7 +316,7 @@ MQ 消息不丢失：未 ack 的消息在停机后重新入队，由新 Pod 接�
 
 ## 小结
 
-Autional 的 `micro-middleware/app` 启动框架用不到 300 行代码，统一管理了 16 个微服务的生命周期：
+Autional 的 `micro-middleware/app` 启动框架用不到 300 行代码，统一管理了 27 个微服务的生命周期：
 
 - **声明式注册**：Builder 模式的 `WithServer` + `WithCloser`
 - **信号驱动**：监听 SIGTERM/SIGINT，自动触发停机时序

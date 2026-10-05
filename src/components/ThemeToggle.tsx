@@ -17,6 +17,11 @@ export function ThemeToggle({ labelLight = '浅色', labelDark = '深色' }: Pro
   useEffect(() => {
     if (!mounted) return;
     document.documentElement.classList.toggle('dark', dark);
+    try {
+      localStorage.setItem('autional-theme', dark ? 'dark' : 'light');
+    } catch {
+      /* 隐私模式等场景忽略 */
+    }
   }, [dark, mounted]);
 
   return (

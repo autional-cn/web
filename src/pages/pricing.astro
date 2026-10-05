@@ -1,16 +1,16 @@
 ---
 import LandingLayout from '../layouts/LandingLayout.astro';
 const plans = [
-  { name: 'Free', price: '$0', period: '/月', desc: '适合 MVP 与原型', features: ['最多 1,000 MAU', '邮箱/密码 + 社交登录', 'TOTP MFA', 'SAML/OIDC SSO', '多租户', '审计日志保留 7 天', '每天 1,000 次 API 调用', 'Discord 社区'], cta: '免费开始', highlight: false },
-  { name: 'Pro', price: '$299', period: '/月', desc: '适合成长中的 AI SaaS', features: ['最多 10,000 MAU', '包含 Free 全部功能', '通行密钥（Passkey）/ WebAuthn', '短信 MFA', '自定义域名', '审计日志保留 90 天', 'API 调用不限量', '邮件支持（4 小时响应）', '99.9% SLA'], cta: '开始试用', highlight: true },
+  { name: 'Free', price: '$0', period: '/月', desc: '适合 MVP 与原型', features: ['最多 1,000 MAU', '邮箱/密码 + 社交登录', 'TOTP MFA', 'SAML/OIDC SSO', '多租户', '审计日志保留 7 天', '每天 1,000 次 API 调用'], cta: '联系我们', highlight: false },
+  { name: 'Pro', price: '$299', period: '/月', desc: '适合成长中的 AI SaaS', features: ['最多 10,000 MAU', '包含 Free 全部功能', '通行密钥（Passkey）/ WebAuthn', '短信 MFA', '自定义域名', '审计日志保留 90 天', 'API 调用不限量', '邮件支持（4 小时响应）', '99.9% SLA'], cta: '联系我们', highlight: true },
   { name: 'Enterprise', price: '定制', period: '', desc: '适合关键业务部署', features: ['MAU 不限量', '包含 Pro 全部功能', '自适应 MFA', 'LDAP/AD 集成', 'SSO 域名验证', '审计日志不限量保留 + 归档', '私有化部署', '7×24 专属支持', '99.99% SLA'], cta: '联系销售', highlight: false },
 ];
 const faqs = [
-  { q: '可以免费自托管 Autional 吗？', a: '可以。Autional 核心以 AGPL 开源。你可以用 Docker 自托管整套 24 个服务的栈 —— 没有授权费用、没有 MAU 限制、也没有功能限制。云端是可选项，适合你不想自己管理基础设施的场景。' },
+  { q: '可以免费自托管 Autional 吗？', a: '可以。当前自托管开源可用；云托管在路线图中（即将推出）。自托管没有授权费用、没有 MAU 限制。' },
   { q: 'MAU 如何计算？', a: 'MAU（月活跃用户）是指在一个自然月内完成认证的唯一用户。如果某位用户在该月内登录过一次，就计为 1 个 MAU，闲置用户不计入。' },
-  { q: '可以从 Free 升级到 Pro 而无需迁移吗？', a: '可以。升级会即时解锁更高的额度与更多功能，无需数据迁移、无需改动代码、无需停机。' },
-  { q: '开源项目有折扣吗？', a: '有。我们为开源项目和非营利组织提供特别定价，详情请联系我们。' },
-  { q: '你们接受哪些支付方式？', a: '我们通过 Stripe 接受所有主流信用卡。Enterprise 档位还支持银行转账与按年开票。' },
+  { q: '云服务上线后，可以从 Free 升级到 Pro 而无需迁移吗？', a: '可以。升级将即时解锁更高的额度与更多功能，无需数据迁移、无需改动代码、无需停机。' },
+  { q: '开源项目有折扣吗？', a: '云服务上线后，我们计划为开源项目和非营利组织提供特别定价，详情请联系我们。' },
+  { q: '你们接受哪些支付方式？', a: '云服务上线后将通过 Stripe 支持主流信用卡；Enterprise 档位支持银行转账与按年开票。' },
 ];
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -24,14 +24,14 @@ const faqJsonLd = {
 ---
 <LandingLayout
   title="定价 — Autional"
-  description="面向 AI 生成应用的简单透明定价。免费开始，需要企业级功能时再升级。"
+  description="Autional 定价说明：自托管免费；云托管在路线图中（即将推出）。"
   keywords="Autional, 定价, 身份, IAM, 订阅, 套餐"
   jsonLd={[faqJsonLd]}
 >
   <section class="mx-auto max-w-7xl px-4 py-20">
     <div class="text-center mb-16">
       <h1 class="text-4xl font-bold sm:text-5xl">简单透明的定价</h1>
-      <p class="mt-4 text-lg text-neutral-500 max-w-xl mx-auto">免费开始。当你的 AI 生成应用需要更多能力时再升级。没有意外账单，没有厂商锁定。</p>
+      <p class="mt-4 text-lg text-neutral-500 max-w-xl mx-auto">当前自托管开源可用；云托管在路线图中（即将推出）。下方为规划中的云服务档位，没有意外账单，没有厂商锁定。</p>
     </div>
     <div class="grid gap-8 lg:grid-cols-3 max-w-5xl mx-auto">
       {plans.map(p => (

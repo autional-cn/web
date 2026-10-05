@@ -4,7 +4,7 @@ date: "2026-05-14"
 category: "Architecture"
 tags: ["数据库隔离", "微服务", "数据安全"]
 readTime: "8 分钟"
-excerpt: "Autional 的 16 个微服务各自拥有独立的 PostgreSQL 数据库。这种「数据库即服务边界」的模式带来了故障隔离、独立扩缩容与更坚固的安全边界。"
+excerpt: "Autional 的 27 个微服务各自拥有独立的 PostgreSQL 数据库。这种「数据库即服务边界」的模式带来了故障隔离、独立扩缩容与更坚固的安全边界。"
 status: verified
 reviewed_by: "butler-exec"
 claims_reviewed: true
@@ -12,7 +12,7 @@ claims_reviewed: true
 
 在微服务架构中，有一个问题反复被提起：「每个服务真的都需要自己的数据库吗？共用一个库不是更简单？」
 
-答案是：对身份与认证系统而言，数据库隔离不是过度设计——而是**安全与可靠性的基石**。Autional 从第一天起就严格遵循 Database-per-Service 模式，16 个微服务各有一个独立的 PostgreSQL 数据库。以下是我们这样设计的原因与经验教训。
+答案是：对身份与认证系统而言，数据库隔离不是过度设计——而是**安全与可靠性的基石**。Autional 从第一天起就严格遵循 Database-per-Service 模式，27 个微服务各有一个独立的 PostgreSQL 数据库。以下是我们这样设计的原因与经验教训。
 
 ## 为什么不能共用一个数据库？
 
@@ -46,7 +46,7 @@ claims_reviewed: true
 
 ## Autional 的数据库隔离实践
 
-### 16 个服务，16 个数据库
+### 27 个服务，27 个数据库
 
 | 服务 | 数据库 | 核心职责 |
 |---------|----------|-------------------|
@@ -204,7 +204,7 @@ func (s *WalletService) Withdraw(ctx context.Context, req *WithdrawRequest) erro
 
 ### PgBouncer 统一入口
 
-全部 16 个服务的数据库连接都经过 PgBouncer（事务池模式）。运维团队只需维护一个 PostgreSQL 集群 + 一个 PgBouncer 实例，而不是 16 台独立的数据库服务器。
+全部 27 个服务的数据库连接都经过 PgBouncer（事务池模式）。运维团队只需维护一个 PostgreSQL 集群 + 一个 PgBouncer 实例，而不是 27 台独立的数据库服务器。
 
 ### 备份策略
 

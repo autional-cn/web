@@ -1,10 +1,9 @@
 ---
 import Layout from '../layouts/LandingLayout.astro';
+import { FUTURE_ROADMAP } from '../lib/product-roadmap';
 const phases = [
-  { period: '已完成', color: 'green', items: ['多租户架构，按租户隔离', 'SAML 2.0 + OIDC + OAuth 2.1 企业级 SSO', 'MFA：TOTP、短信、邮件、WebAuthn/FIDO2/Passkey', '自适应 MFA —— 基于风险的 7 类信号认证', 'NHI（非人类身份）—— 智能体/机器人/设备生命周期', 'RBAC + ABAC + ReBAC + PIM 授权模型', 'Merkle 哈希链审计，支持 GDPR DSAR 自动化', '15 个合规框架（GDPR/SOX/PCI/HIPAA/ISO/等保）', '国密算法：SM2/SM3/SM4、Ed25519', '24 个微服务共 1,400+ 个 REST API 端点', '30+ 个 SDK 软件包（React、Vue、Next.js、Node.js、MiniApp、RN）', 'Webhook 事件系统，支持 600+ 种事件类型', '用于内部通信的 gRPC 服务网格', '密码传输加密（ECDH/RSA/哈希/明文）', '字段级 AES-256-GCM 加密，支持密钥轮换', '身份 API 支持 IPv6 双栈'] },
-  { period: '2026 Q3', color: 'blue', items: ['Autional Cloud 公测', '管理控制台改版', 'React SDK v1.0 稳定版', 'Bolt.new 与 Lovable.dev AI 工具模板'] },
-  { period: '2026 Q4', color: 'blue', items: ['Vue 与 Next.js SDK', 'SOC 2 Type II 审计', '多区域云部署', '企业级审计归档'] },
-  { period: '2027 H1', color: 'gray', items: ['Go 与 Python SDK', 'AI 智能体原生认证（NHI）', 'WebAuthn 通行密钥透传', '用于自动化部署的 Kubernetes Operator'] },
+  { period: '已完成', color: 'green', items: ['多租户架构，按租户隔离', 'SAML 2.0 + OIDC + OAuth 2.1 企业级 SSO', 'MFA：TOTP、短信、邮件、WebAuthn/FIDO2/Passkey', '自适应 MFA —— 基于风险的 7 类信号认证', 'NHI（非人类身份）—— 智能体/机器人/设备生命周期', 'RBAC + ABAC + ReBAC + PIM 授权模型', 'Merkle 哈希链审计，支持 GDPR DSAR 自动化', '15 个合规框架（GDPR/SOX/PCI/HIPAA/ISO/等保）', '国密算法：SM2/SM3/SM4、Ed25519', '27 个微服务共 1,400+ 个 REST API 端点', 'npm SDK 与设计系统软件包已发布（@autional-cn/react、@autional-cn/ui 等）', 'Webhook 事件系统，支持 600+ 种事件类型', '用于内部通信的 gRPC 服务网格', '密码传输加密（ECDH/RSA/哈希/明文）', '字段级 AES-256-GCM 加密，支持密钥轮换', '身份 API 支持 IPv6 双栈'] },
+  ...FUTURE_ROADMAP.map((p, i) => ({ ...p, color: i >= 2 ? 'gray' : 'blue' })),
 ];
 ---
 <Layout title="路线图 — Autional" description="Autional 产品路线图与研发优先级。" keywords="Autional, 路线图, 规划, 2026, 2027, SDK, 云, 通行密钥, 企业, SOC 2">

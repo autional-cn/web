@@ -52,7 +52,7 @@ eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIwMUFSO....  ← Header
 
 这是 JWT 的核心卖点。服务端无需维护会话存储，也无需在每次请求时查询外部缓存。在微服务架构中，这意味着服务 A、服务 B、服务 C 可以各自独立校验同一个 JWT，而无需共享任何状态。
 
-Autional 的架构完美体现了这一优势：identity-service 签发 JWT 后，包含 session-service、profile-service、wallet-service 在内的全部 15 个微服务都能独立校验，无需每次都去询问签发方。
+Autional 的架构完美体现了这一优势：identity-service 签发 JWT 后，包含 session-service、profile-service、wallet-service 在内的全部 27 个微服务都能独立校验，无需每次都去询问签发方。
 
 **2. 水平扩容无需状态同步**
 

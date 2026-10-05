@@ -160,7 +160,7 @@ Go 的 CPU 使用率会接近 100%（bcrypt 是计算密集型），但请求从
 
 ### 1. 每个服务独立编译
 
-15 个微服务各自是独立的 Go module，通过 `replace` 指令引用本地依赖。这意味着修改 `base/error` 只需重新编译受影响的 2-3 个服务，而不是整个项目。
+27 个微服务各自是独立的 Go module，通过 `replace` 指令引用本地依赖。这意味着修改 `base/error` 只需重新编译受影响的 2-3 个服务，而不是整个项目。
 
 ### 2. 泛型减少重复代码
 
@@ -168,7 +168,7 @@ Go 1.18+ 的泛型在 `dto_base` 包中被广泛使用：`dto_base.NewDataRespon
 
 ### 3. 接口驱动开发
 
-identity-service 的 `Repository` 接口既可以让 `gomock` 生成 mock 用于单元测试，也可以注入真实的 PostgreSQL repository 用于集成测试。同样的模式复制到了全部 15 个服务。
+identity-service 的 `Repository` 接口既可以让 `gomock` 生成 mock 用于单元测试，也可以注入真实的 PostgreSQL repository 用于集成测试。同样的模式复制到了全部 27 个服务。
 
 ### 4. 编译期安全
 

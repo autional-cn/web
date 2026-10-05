@@ -10,6 +10,14 @@ const promptZh = `请读取 https://www.autional.cn/ai/skill.md，并据此为�
 若打不开，改用国内镜像：
 https://cdn.autional.cn/ai/latest/SKILL.md`;
 
+// hreflang 互指（T-03）：/ai（zh-CN 主）与 /ai/en 互指，x-default 指中文主版本
+const site = Astro.site!;
+const alternates = [
+  { hreflang: 'zh-CN', href: new URL('/ai/', site).href },
+  { hreflang: 'en', href: new URL('/ai/en/', site).href },
+  { hreflang: 'x-default', href: new URL('/ai/', site).href },
+];
+
 const phases = [
   { n: '0', title: '先建安全网', desc: 'git 分支、工具链检查、风险披露——所有改动可回退。' },
   { n: '1', title: '盘点你的应用', desc: '框架、现有认证、冲突点，以及接入会影响什么。' },
@@ -37,6 +45,7 @@ const checklist = [
   title="AI 接入 — Autional"
   description="一句话让 AI 编程助手为你的应用接入 Autional 登录与多用户能力。支持 Claude Code、Cursor、OpenCode 等任意 AI agent；含自有 CDN 国内兜底。"
   keywords="Autional, AI 接入, Claude Code, Cursor, AI 编程助手, 登录, 多用户, OIDC, 自有 CDN 镜像"
+  alternates={alternates}
 >
   <section class="mx-auto max-w-4xl px-4 py-20">
     <!-- 语言 / 区域切换 -->
