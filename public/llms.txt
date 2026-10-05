@@ -14,8 +14,8 @@
 - 教程: https://www.autional.cn/ai
 - Skill (中文): https://www.autional.cn/ai/skill.md
 - Skill (EN): https://www.autional.cn/ai/skill.en.md
-- Gitee 镜像 (中文): https://gitee.com/autional/sdk/raw/main/skills/autional-cn/SKILL.md
-- jsDelivr 镜像 (EN): https://cdn.jsdelivr.net/gh/autional/sdk@main/skills/autional-cn/SKILL.en.md
+- 自有 CDN 镜像 (中文): https://cdn.autional.cn/ai/latest/SKILL.md
+- 自有 CDN 镜像 (EN): https://cdn.autional.cn/ai/latest/SKILL.en.md
 - 合规档: https://www.autional.cn/ai/references/compliance-matrix.md
 - 配置模板: https://www.autional.cn/ai/references/config-template.md
 

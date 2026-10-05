@@ -8,7 +8,7 @@ const skillMd = readFileSync(resolve(process.cwd(), 'public/ai/skill.md'), 'utf8
 
 const promptZh = `请读取 https://www.autional.cn/ai/skill.md，并据此为当前项目接入 Autional 登录。
 若打不开，改用国内镜像：
-https://gitee.com/autional/sdk/raw/main/skills/autional-cn/SKILL.md`;
+https://cdn.autional.cn/ai/latest/SKILL.md`;
 
 const phases = [
   { n: '0', title: '先建安全网', desc: 'git 分支、工具链检查、风险披露——所有改动可回退。' },
@@ -35,8 +35,8 @@ const checklist = [
 
 <Layout
   title="AI 接入 — Autional"
-  description="一句话让 AI 编程助手为你的应用接入 Autional 登录与多用户能力。支持 Claude Code、Cursor、OpenCode 等任意 AI agent；含 Gitee 国内镜像兜底。"
-  keywords="Autional, AI 接入, Claude Code, Cursor, AI 编程助手, 登录, 多用户, OIDC, Gitee 镜像"
+  description="一句话让 AI 编程助手为你的应用接入 Autional 登录与多用户能力。支持 Claude Code、Cursor、OpenCode 等任意 AI agent；含自有 CDN 国内兜底。"
+  keywords="Autional, AI 接入, Claude Code, Cursor, AI 编程助手, 登录, 多用户, OIDC, 自有 CDN 镜像"
 >
   <section class="mx-auto max-w-4xl px-4 py-20">
     <!-- 语言 / 区域切换 -->
@@ -53,7 +53,7 @@ const checklist = [
       <h1 class="text-4xl font-bold sm:text-5xl">把你的应用变成多人产品</h1>
       <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-500">
         把一句话粘贴进你的 AI 编程助手。它会抓取接入 skill——一份引导式流程，为你的现有项目加上
-        Autional 登录、账号与会话。中国大陆网络不稳时，自动回退 Gitee 镜像。
+        Autional 登录、账号与会话。中国大陆网络不稳时，自动回退自有 CDN 镜像。
       </p>
     </div>
 
@@ -74,7 +74,7 @@ const checklist = [
       <summary class="cursor-pointer text-sm font-semibold text-neutral-600 dark:text-neutral-300">习惯用英文？改用这句 prompt</summary>
       <div class="mt-4 rounded-xl bg-slate-900 dark:bg-slate-950 border border-neutral-700 p-4 overflow-x-auto">
         <pre id="prompt-en" class="text-sm text-green-400 font-mono leading-relaxed whitespace-pre-wrap">Fetch https://www.autional.cn/ai/skill.en.md and follow it to add Autional login to this project. If unreachable, use:
-https://cdn.jsdelivr.net/gh/autional/sdk@main/skills/autional-cn/SKILL.en.md</pre>
+https://cdn.autional.cn/ai/latest/SKILL.en.md</pre>
       </div>
       <button class="brand-button-secondary mt-3" data-copy-target="prompt-en">Copy English prompt</button>
     </details>
@@ -138,7 +138,7 @@ https://cdn.jsdelivr.net/gh/autional/sdk@main/skills/autional-cn/SKILL.en.md</pr
           展开、全选复制，连同"按这份说明为我的项目接入 Autional 登录"一起粘贴给 agent。
           以下内容与
           <a href="/ai/skill.md" class="text-primary-600 hover:underline font-mono text-xs">/ai/skill.md</a>
-          逐字节一致（Gitee 镜像同名文件亦一致）。
+          逐字节一致（自有 CDN 镜像同名文件亦一致）。
         </p>
         <details>
           <summary class="cursor-pointer text-sm font-semibold text-primary-600">展开完整 skill 全文（{(skillMd.length / 1024).toFixed(0)} KB）</summary>
@@ -159,12 +159,12 @@ https://cdn.jsdelivr.net/gh/autional/sdk@main/skills/autional-cn/SKILL.en.md</pr
         </div>
       </div>
       <div class="brand-card p-6">
-        <p class="font-semibold mb-1">路径 C — Gitee 国内镜像</p>
-        <p class="text-sm text-neutral-500 mb-3">整站不可达时，skill 文件在 Gitee 有同名镜像，内容与本站逐字节一致：</p>
+        <p class="font-semibold mb-1">路径 C — 自有 CDN 镜像</p>
+        <p class="text-sm text-neutral-500 mb-3">整站不可达时，skill 文件在自有 CDN 有同名镜像，内容与本站逐字节一致：</p>
         <div class="rounded-xl bg-slate-900 dark:bg-slate-950 border border-neutral-700 p-4 overflow-x-auto">
-          <code id="gitee-url" class="text-sm text-green-400 font-mono whitespace-nowrap">https://gitee.com/autional/sdk/raw/main/skills/autional-cn/SKILL.md</code>
+          <code id="cdn-url" class="text-sm text-green-400 font-mono whitespace-nowrap">https://cdn.autional.cn/ai/latest/SKILL.md</code>
         </div>
-        <button class="brand-button-secondary mt-3" data-copy-target="gitee-url">复制镜像地址</button>
+        <button class="brand-button-secondary mt-3" data-copy-target="cdn-url">复制镜像地址</button>
       </div>
     </div>
 
@@ -179,7 +179,7 @@ https://cdn.jsdelivr.net/gh/autional/sdk@main/skills/autional-cn/SKILL.en.md</pr
         <li><a href="/llms.txt" class="text-primary-600 hover:underline">/llms.txt</a><span class="text-neutral-400 font-sans"> — 站点机器可读索引</span></li>
       </ul>
       <p class="mt-4 text-xs text-neutral-400">
-        skill 不含任何密钥——其中所有端点均为公开 URL。只从 www.autional.cn 抓取这些文件；Gitee / jsDelivr 镜像仅作网络兜底，内容同源同校验。
+        skill 不含任何密钥——其中所有端点均为公开 URL。只从 www.autional.cn 抓取这些文件；自有 CDN 镜像仅作网络兜底，内容同源同校验。
       </p>
     </div>
   </section>

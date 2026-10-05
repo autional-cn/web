@@ -7,7 +7,7 @@ import { resolve } from 'node:path';
 const skillEnMd = readFileSync(resolve(process.cwd(), 'public/ai/skill.en.md'), 'utf8');
 
 const promptEn = `Fetch https://www.autional.cn/ai/skill.en.md and follow it to add Autional login to this project. If unreachable, use:
-https://cdn.jsdelivr.net/gh/autional/sdk@main/skills/autional-cn/SKILL.en.md`;
+https://cdn.autional.cn/ai/latest/SKILL.en.md`;
 
 const phases = [
   { n: '0', title: 'Safety net first', desc: 'Git branch, toolkit check, risk disclosure — every change is reversible.' },
@@ -34,8 +34,8 @@ const checklist = [
 
 <Layout
   title="AI Onboarding — Autional"
-  description="Add Autional login and multi-user support to your app with one prompt. Works with Claude Code, Cursor, OpenCode, and any AI coding agent. Includes a jsDelivr CDN fallback."
-  keywords="Autional, AI onboarding, Claude Code, Cursor, AI coding agent, authentication, login, multi-user, OIDC, jsDelivr fallback"
+  description="Add Autional login and multi-user support to your app with one prompt. Works with Claude Code, Cursor, OpenCode, and any AI coding agent. Includes an own-CDN fallback."
+  keywords="Autional, AI onboarding, Claude Code, Cursor, AI coding agent, authentication, login, multi-user, OIDC, own-CDN fallback"
 >
   <section class="mx-auto max-w-4xl px-4 py-20">
     <!-- Language / region switch -->
@@ -52,7 +52,7 @@ const checklist = [
       <h1 class="text-4xl font-bold sm:text-5xl">Turn your app into a multi-user product</h1>
       <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-500">
         Paste one prompt into your AI coding agent. It fetches the onboarding skill — a guided procedure for adding
-        Autional login, accounts, and sessions to your existing project. Falls back to a jsDelivr CDN mirror if the site is unreachable.
+        Autional login, accounts, and sessions to your existing project. Falls back to an own-CDN mirror if the site is unreachable.
       </p>
     </div>
 
@@ -74,7 +74,7 @@ const checklist = [
       <div class="mt-4 rounded-xl bg-slate-900 dark:bg-slate-950 border border-neutral-700 p-4 overflow-x-auto">
         <pre id="prompt-zh" class="text-sm text-green-400 font-mono leading-relaxed whitespace-pre-wrap">请读取 https://www.autional.cn/ai/skill.md，并据此为当前项目接入 Autional 登录。
 若打不开，改用国内镜像：
-https://gitee.com/autional/sdk/raw/main/skills/autional-cn/SKILL.md</pre>
+https://cdn.autional.cn/ai/latest/SKILL.md</pre>
       </div>
       <button class="brand-button-secondary mt-3" data-copy-target="prompt-zh">Copy 中文 prompt</button>
     </details>
@@ -156,10 +156,10 @@ https://gitee.com/autional/sdk/raw/main/skills/autional-cn/SKILL.md</pre>
         </div>
       </div>
       <div class="brand-card p-6">
-        <p class="font-semibold mb-1">Option C — jsDelivr CDN mirror</p>
-        <p class="text-sm text-neutral-500 mb-3">If the site is unreachable, fetch the same file from the jsDelivr CDN:</p>
+        <p class="font-semibold mb-1">Option C — own CDN mirror</p>
+        <p class="text-sm text-neutral-500 mb-3">If the site is unreachable, fetch the same file from the own CDN:</p>
         <div class="rounded-xl bg-slate-900 dark:bg-slate-950 border border-neutral-700 p-4 overflow-x-auto">
-          <code id="cdn-url" class="text-sm text-green-400 font-mono whitespace-nowrap">https://cdn.jsdelivr.net/gh/autional/sdk@main/skills/autional-cn/SKILL.en.md</code>
+          <code id="cdn-url" class="text-sm text-green-400 font-mono whitespace-nowrap">https://cdn.autional.cn/ai/latest/SKILL.en.md</code>
         </div>
         <button class="brand-button-secondary mt-3" data-copy-target="cdn-url">Copy mirror URL</button>
       </div>
@@ -177,7 +177,7 @@ https://gitee.com/autional/sdk/raw/main/skills/autional-cn/SKILL.md</pre>
       </ul>
       <p class="mt-4 text-xs text-neutral-400">
         The skill contains zero secrets — every endpoint in it is a public URL. Only fetch these files from
-        www.autional.cn; the mirror (jsDelivr CDN) is a network fallback only, same content.
+        www.autional.cn; the mirror (own CDN) is a network fallback only, same content.
       </p>
     </div>
   </section>
