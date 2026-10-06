@@ -10,6 +10,6 @@
 module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.{astro,html,js,ts,jsx,tsx,md,mdx}','../landing-site-astro/src/app/**/*.{tsx,ts}'],
-  presets: [require('@autional-cn/tailwind-preset')],
+  presets: [require('@autional/tailwind-preset')],
   plugins: [require('@tailwindcss/typography')],
 };

@@ -2,8 +2,8 @@
 import Layout from '../layouts/LandingLayout.astro';
 const steps = [
   { icon: '1', title: '启动平台', code: `# 完整步骤见快速开始指南：https://developer.autional.cn/quickstart\ndocker compose -f docker-compose.infra.yml -f docker-compose.monolith.yml up -d\n\n# 等待约 2-3 分钟，全部 27 个服务启动`, lang: 'bash' },
-  { icon: '2', title: '安装 SDK', code: `npm install @autional-cn/react`, lang: 'bash' },
-  { icon: '3', title: '为你的应用接入认证', code: `import { AuthProvider } from '@autional-cn/react';\n\nfunction App() {\n  return (\n    <AuthProvider>\n      <YourApp />\n    </AuthProvider>\n  );\n}`, lang: 'tsx' },
+  { icon: '2', title: '安装 SDK', code: `npm install @autional/react`, lang: 'bash' },
+  { icon: '3', title: '为你的应用接入认证', code: `import { AuthProvider } from '@autional/react';\n\nfunction App() {\n  return (\n    <AuthProvider>\n      <YourApp />\n    </AuthProvider>\n  );\n}`, lang: 'tsx' },
   { icon: '4', title: '本地演示与控制台', code: `# 查看本地服务状态\ndocker compose ps\n\n# 管理控制台：http://localhost:11001\n# 示例账号（仅限本地演示，请勿用于生产）：admin@admin.com / admin123`, lang: 'bash' },
 ];
 const apis = [

@@ -54,8 +54,8 @@ Open Core 模式让我们能同时做两件事：**用开源版赢得开发者�
 | 项目 | 说明 |
 |--------|-------------|
 | 门户界面 | 品牌门户、展示站与管理界面的前端实现 |
-| 设计系统与组件库 | @autional-cn/ui、@autional-cn/tokens 等组件库与设计令牌 |
-| SDK 与 npm 软件包 | @autional-cn/react、@autional-cn/onboard、@autional-cn/shared 等已发布软件包 |
+| 设计系统与组件库 | @autional/ui、@autional/tokens 等组件库与设计令牌 |
+| SDK 与 npm 软件包 | @autional/react、@autional/onboard、@autional/shared 等已发布软件包 |
 
 **商业授权（私有化部署；云托管在路线图中）：**
 

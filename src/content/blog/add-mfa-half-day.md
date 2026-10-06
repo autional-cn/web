@@ -150,11 +150,11 @@ Autional 的 `mfa-service` 支持以下四种认证方式，可在策略中灵�
 
 ## 快速开始
 
-Autional 提供了完整的文档与快速开始指南，并已发布 @autional-cn/react 等 npm 软件包。前端应用可以直接安装使用；其他技术栈通过标准 OAuth 2.0 / OIDC 流程接入。
+Autional 提供了完整的文档与快速开始指南，并已发布 @autional/react 等 npm 软件包。前端应用可以直接安装使用；其他技术栈通过标准 OAuth 2.0 / OIDC 流程接入。
 
 ```bash
 # 安装 React SDK（其他技术栈通过标准 OAuth 2.0 / OIDC 流程接入）
-npm install @autional-cn/react
+npm install @autional/react
 
 # 本地演示环境：完整启动步骤见快速开始指南
 # https://developer.autional.cn/quickstart

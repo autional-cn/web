@@ -4,12 +4,12 @@ import { SITE_FACTS } from '../lib/site-facts';
 
 // 已发布软件包以 npm 实查为准（单一来源：src/lib/site-facts.ts）
 const pkgMeta: Record<string, { desc: string; install: string }> = {
-  '@autional-cn/react': { desc: 'React —— AuthProvider、useAuth、RequireAuth', install: 'npm install @autional-cn/react' },
-  '@autional-cn/onboard': { desc: '项目初始化 CLI', install: 'npx @autional-cn/onboard' },
-  '@autional-cn/ui': { desc: 'React 组件库 —— 门户与管理面组件', install: 'npm install @autional-cn/ui' },
-  '@autional-cn/tokens': { desc: '设计令牌 —— 颜色、排版与间距 CSS 变量', install: 'npm install @autional-cn/tokens' },
-  '@autional-cn/tailwind-preset': { desc: 'Tailwind 预设 —— 接入设计令牌', install: 'npm install @autional-cn/tailwind-preset' },
-  '@autional-cn/shared': { desc: '共享运行时工具 —— 多门户通用逻辑', install: 'npm install @autional-cn/shared' },
+  '@autional/react': { desc: 'React —— AuthProvider、useAuth、RequireAuth', install: 'npm install @autional/react' },
+  '@autional/onboard': { desc: '项目初始化 CLI', install: 'npx @autional/onboard' },
+  '@autional/ui': { desc: 'React 组件库 —— 门户与管理面组件', install: 'npm install @autional/ui' },
+  '@autional/tokens': { desc: '设计令牌 —— 颜色、排版与间距 CSS 变量', install: 'npm install @autional/tokens' },
+  '@autional/tailwind-preset': { desc: 'Tailwind 预设 —— 接入设计令牌', install: 'npm install @autional/tailwind-preset' },
+  '@autional/shared': { desc: '共享运行时工具 —— 多门户通用逻辑', install: 'npm install @autional/shared' },
 };
 const published = SITE_FACTS.publishedPackages.map((p) => ({
   ...p,
@@ -17,8 +17,8 @@ const published = SITE_FACTS.publishedPackages.map((p) => ({
 }));
 const quickstart = {
   lang: 'React',
-  code: 'import { AuthProvider } from \'@autional-cn/react\';\n\nfunction App() {\n  return (\n    <AuthProvider>\n      <YourApp />\n    </AuthProvider>\n  );\n}',
-  install: 'npm install @autional-cn/react',
+  code: 'import { AuthProvider } from \'@autional/react\';\n\nfunction App() {\n  return (\n    <AuthProvider>\n      <YourApp />\n    </AuthProvider>\n  );\n}',
+  install: 'npm install @autional/react',
 };
 ---
 <Layout title="SDK — Autional" description="Autional SDK：已发布的 npm 软件包与设计系统工具，一行代码接入身份能力。" keywords="Autional, SDK, React, npm, 认证, TypeScript, 开源, 设计系统">
