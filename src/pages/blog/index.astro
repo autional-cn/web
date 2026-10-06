@@ -21,7 +21,7 @@ const categories = ['Tech','Architecture','Compliance','Product','Security','Pro
     </div>
 
     {featured && (
-      <div class="mt-12 overflow-hidden rounded-md border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-slate-900" data-post-card data-post-category={featured.data.category}>
+      <div class="mt-12 overflow-hidden rounded-md border border-neutral-200 bg-white shadow-card dark:border-neutral-800 dark:bg-slate-900" data-post-card data-post-category={featured.data.category}>
         <div class="grid lg:grid-cols-2">
           <div class="flex items-center justify-center bg-primary-50 p-10 dark:bg-primary-900/10">
             <div class="text-center">
@@ -42,7 +42,7 @@ const categories = ['Tech','Architecture','Compliance','Product','Security','Pro
 
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {rest.map((post: CollectionEntry<'blog'>) => (
-        <article class="group flex flex-col rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-neutral-800 dark:bg-slate-900" data-post-card data-post-category={post.data.category}>
+        <article class="group flex flex-col rounded-xl border border-neutral-200 bg-white p-6 shadow-card transition-all hover:shadow-md dark:border-neutral-800 dark:bg-slate-900" data-post-card data-post-category={post.data.category}>
           <span class="rounded-full bg-primary-50 dark:bg-primary-900/30 px-2.5 py-0.5 text-xs font-medium text-primary-700 w-fit">{post.data.category}</span>
           <a href={`/blog/${post.id.replace(/\.md$/,'')}`} class="mt-4"><h3 class="text-lg font-semibold group-hover:text-primary-600">{post.data.title}</h3></a>
           <p class="mt-2 flex-1 text-sm text-neutral-600 dark:text-neutral-400">{post.data.excerpt}</p>
