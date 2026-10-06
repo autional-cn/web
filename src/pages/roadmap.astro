@@ -11,7 +11,7 @@ const phases = [
     <h1 class="text-4xl font-bold sm:text-5xl text-center">路线图</h1>
     <p class="mx-auto mt-4 max-w-2xl text-center text-lg text-neutral-500">我们已经构建的、正在构建的，以及前进的方向。所有日期均为预估，可能调整。</p>
     <div class="mt-16 space-y-8">{phases.map(p => (
-      <div class={`rounded-2xl border p-6 ${p.color === 'green' ? 'border-green-200 bg-green-50 dark:border-green-900 dark:bg-green-900/10' : 'border-neutral-200 dark:border-neutral-800'}`}>
+      <div class={`rounded-md border p-6 ${p.color === 'green' ? 'border-green-200 bg-green-50 dark:border-green-900 dark:bg-green-900/10' : 'border-neutral-200 dark:border-neutral-800'}`}>
         <div class={`text-sm font-semibold mb-3 ${p.color === 'green' ? 'text-green-700 dark:text-green-400' : 'text-primary-600'}`}>{p.period}</div>
         <ul class="grid gap-2 sm:grid-cols-2">{p.items.map(i => <li class="flex items-start gap-2 text-sm"><span class={`mt-0.5 shrink-0 ${p.color === 'green' ? 'text-green-500' : 'text-primary-500'}`}>{p.color === 'green' ? '✓' : '→'}</span>{i}</li>)}</ul>
       </div>
