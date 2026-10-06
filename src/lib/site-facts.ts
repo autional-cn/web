@@ -2,7 +2,7 @@
 // 服务数核对（2026-10-05，五源一致）：infra-ops/docker/entrypoint-monolith.sh（27 hostname）·
 // shared/ci/bin/repos.manifest（27 service-*）· sites/reference/scripts/sync-specs-zh.py（27）·
 // reference.autional.cn 线上"全部 27" · demo 门户配置 27 slug。
-// npm 包清单核对（2026-10-05，npmjs 全量重扫 + 临时目录实装验证 @autional/react 可安装）。
+// npm 包清单核对（2026-10-07，SDK 重命名发版后重扫：SDK 线 0.3.0 + 设计系统 rc 系列）。
 
 export const SITE_FACTS = {
   serviceCount: 27,
@@ -11,11 +11,13 @@ export const SITE_FACTS = {
   githubOrg: 'https://github.com/autional-cn',
   /** 已发布至 npm 的软件包（以 npm 实查为准；发布新包后同步此表） */
   publishedPackages: [
-    { name: '@autional/react', version: '0.1.0-rc' },
-    { name: '@autional/onboard', version: '0.1.0' },
-    { name: '@autional/ui', version: '0.1.0-rc.38' },
-    { name: '@autional/tokens', version: '0.1.0-rc.7' },
-    { name: '@autional/tailwind-preset', version: '0.1.0-rc.2' },
-    { name: '@autional/shared', version: '0.1.0-rc.26' },
+    { name: '@autional/react', version: '0.3.0' },
+    { name: '@autional/onboard', version: '0.3.0' },
+    { name: '@autional/ui', version: '0.1.0-rc.42' },
+    { name: '@autional/tokens', version: '0.1.0-rc.10' },
+    { name: '@autional/tailwind-preset', version: '0.1.0-rc.4' },
+    { name: '@autional/shared', version: '0.1.0-rc.32' },
+    { name: '@autional/eslint-config', version: '0.1.0-rc.1' },
+    { name: '@autional/tsconfig', version: '0.1.0-rc' },
   ],
 } as const;

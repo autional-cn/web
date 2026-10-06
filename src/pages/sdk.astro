@@ -10,6 +10,8 @@ const pkgMeta: Record<string, { desc: string; install: string }> = {
   '@autional/tokens': { desc: '设计令牌 —— 颜色、排版与间距 CSS 变量', install: 'npm install @autional/tokens' },
   '@autional/tailwind-preset': { desc: 'Tailwind 预设 —— 接入设计令牌', install: 'npm install @autional/tailwind-preset' },
   '@autional/shared': { desc: '共享运行时工具 —— 多门户通用逻辑', install: 'npm install @autional/shared' },
+  '@autional/eslint-config': { desc: 'ESLint 共享配置', install: 'npm install -D @autional/eslint-config' },
+  '@autional/tsconfig': { desc: 'TypeScript 共享配置', install: 'npm install -D @autional/tsconfig' },
 };
 const published = SITE_FACTS.publishedPackages.map((p) => ({
   ...p,
@@ -25,7 +27,7 @@ const quickstart = {
   <section class="mx-auto max-w-6xl px-4 py-20">
     <div class="text-center mb-16">
       <h1 class="text-4xl font-bold sm:text-5xl">SDK</h1>
-      <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-500">已发布的 npm 软件包，均可直接安装：React 适配、项目初始化 CLI 与设计系统工具。更多框架适配（Vue、Next.js 等）在<a href="/roadmap" class="text-primary-600 hover:underline">路线图</a>中。</p>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-500">已发布的 npm 软件包，均可直接安装：React 适配、项目初始化 CLI、设计系统与工程配置工具，以及 Vue、Next.js、Node 等更多框架适配。</p>
     </div>
 
     <!-- Quickstart -->
