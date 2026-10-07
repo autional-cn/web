@@ -3,21 +3,21 @@ import Layout from '../layouts/LandingLayout.astro';
 import { SITE_FACTS } from '../lib/site-facts';
 const codeSample = `<span class="text-primary-200">// app.tsx</span>
 <span class="text-sky-300">import</span> {
-  <span class="text-white">AuthProvider</span>,
+  <span class="text-white">AutionalProvider</span>,
 } <span class="text-sky-300">from</span> <span class="text-amber-300">'@autional/react'</span>;
+
+<span class="text-sky-300">const</span> <span class="text-white">config</span> = {
+  <span class="text-emerald-300">appId</span>: <span class="text-amber-300">'my-app'</span>,
+  <span class="text-emerald-300">issuer</span>: <span class="text-amber-300">'https://api.autional.cn'</span>,
+};
 
 <span class="text-sky-300">export function</span> <span class="text-white">App</span>() {
   <span class="text-fuchsia-300">return</span> (
-    <span class="text-sky-200">&lt;AuthProvider</span>
-      <span class="text-emerald-300">tenant</span>=<span class="text-amber-300">"workspace-eu"</span>
-      <span class="text-emerald-300">features</span>=<span class="text-white">{[
-        'sso',
-        'passkey',
-        'audit',
-      ]}</span>
+    <span class="text-sky-200">&lt;AutionalProvider</span>
+      <span class="text-emerald-300">config</span>=<span class="text-white">{config}</span>
     <span class="text-sky-200">&gt;</span>
       <span class="text-sky-200">&lt;YourProduct /&gt;</span>
-    <span class="text-sky-200">&lt;/AuthProvider&gt;</span>
+    <span class="text-sky-200">&lt;/AutionalProvider&gt;</span>
   );
 }`;
 

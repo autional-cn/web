@@ -160,14 +160,14 @@ Autional 提供覆盖主流平台的客户端 SDK，PKCE 逻辑已内置于 SDK�
 
 ```typescript
 // Web SDK (React)
-import { useAuth, login } from '@authms/react';
+import { useAutional } from '@autional/react';
 
 function LoginButton() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, loginWithOAuth } = useAutional();
   
   const handleLogin = async () => {
-    await login({
-      clientId: 'myapp',
+    await loginWithOAuth({
+      provider: 'google',
       redirectUri: 'https://myapp.com/callback',
       // ⬇️ SDK auto-generates code_verifier and computes code_challenge
       // Developers don't need to worry about PKCE details
@@ -242,18 +242,11 @@ const accessToken = new URLSearchParams(hash.substring(1)).get('access_token');
 
 **改造后（授权码 + PKCE）：**
 ```javascript
-// response_type=code → exchange code for token via backend SDK
-import { exchangeCodeForToken } from '@authms/web-sdk';
+// 改造后：授权码 + PKCE 由 SDK 托管，开发者无需手写交换逻辑
+import { useAutional } from '@autional/react';
 
-const params = new URLSearchParams(window.location.search);
-const code = params.get('code');
-
-const { accessToken, refreshToken } = await exchangeCodeForToken({
-  code,
-  codeVerifier: getStoredCodeVerifier(), // SDK manages this
-  clientId: 'myapp',
-  redirectUri: 'https://myapp.com/callback'
-});
+const { loginWithOAuth } = useAutional();
+await loginWithOAuth({ provider: 'google' });
 ```
 
 对已经使用我们 SDK（React、Vue、Android、iOS）的 Autional 用户而言，**无需任何代码改动**。oauth-service 会自动以 PKCE 处理所有授权码流程，对客户端完全透明。

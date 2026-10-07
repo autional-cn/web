@@ -4,7 +4,7 @@ import { SITE_FACTS } from '../lib/site-facts';
 
 // 已发布软件包以 npm 实查为准（单一来源：src/lib/site-facts.ts）
 const pkgMeta: Record<string, { desc: string; install: string }> = {
-  '@autional/react': { desc: 'React —— AuthProvider、useAuth、RequireAuth', install: 'npm install @autional/react' },
+  '@autional/react': { desc: 'React —— AutionalProvider、useAutional、RequireAuth', install: 'npm install @autional/react' },
   '@autional/onboard': { desc: '项目初始化 CLI', install: 'npx @autional/onboard' },
   '@autional/ui': { desc: 'React 组件库 —— 门户与管理面组件', install: 'npm install @autional/ui' },
   '@autional/tokens': { desc: '设计令牌 —— 颜色、排版与间距 CSS 变量', install: 'npm install @autional/tokens' },
@@ -19,7 +19,7 @@ const published = SITE_FACTS.publishedPackages.map((p) => ({
 }));
 const quickstart = {
   lang: 'React',
-  code: 'import { AuthProvider } from \'@autional/react\';\n\nfunction App() {\n  return (\n    <AuthProvider>\n      <YourApp />\n    </AuthProvider>\n  );\n}',
+  code: 'import { AutionalProvider } from \'@autional/react\';\n\nconst config = { appId: \'my-app\', issuer: \'https://api.autional.cn\' };\n\nfunction App() {\n  return (\n    <AutionalProvider config={config}>\n      <YourApp />\n    </AutionalProvider>\n  );\n}',
   install: 'npm install @autional/react',
 };
 ---

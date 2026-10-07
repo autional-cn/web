@@ -44,7 +44,7 @@ claims_reviewed: true
 
 **Keycloak** 中等。近些年 Keycloak 的文档质量明显提升，但 Java 技术栈带来的复杂度对非 Java 团队并不友好。管理控制台 UI 可用但略显笨重——需要自定义登录页与邮件模板的团队会面临较陡的学习曲线。
 
-**Autional** 良好。Autional 提供 React 组件库（`@authms/shared`）、TanStack Query hooks 与自动生成的 TypeScript API 客户端。接入一个登录框只需两个组件：`<AuthProvider>` + `<LoginForm>`。不过其文档丰富度仍不及 Auth0——中文文档完备，英文文档还在建设中。
+**Autional** 良好。Autional 提供 React SDK（`@autional/react`）、门户组件库（`@autional/ui`）与按服务划分的自动生成 TypeScript API 客户端。接入登录只需一个 Provider：用 `<AutionalProvider>` 包裹应用，配合 `useAutional()` hooks。不过其文档丰富度仍不及 Auth0——中文文档完备，英文文档还在建设中。
 
 ### 2. 性能与资源占用
 
