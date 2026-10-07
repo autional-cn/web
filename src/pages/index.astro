@@ -1,23 +1,23 @@
 ---
 import Layout from '../layouts/LandingLayout.astro';
 import { SITE_FACTS } from '../lib/site-facts';
-const codeSample = `<span class="text-primary-200">// app.tsx</span>
-<span class="text-sky-300">import</span> {
+const codeSample = `<span class="text-syntax-comment">// app.tsx</span>
+<span class="text-syntax-keyword">import</span> {
   <span class="text-white">AutionalProvider</span>,
-} <span class="text-sky-300">from</span> <span class="text-amber-300">'@autional/react'</span>;
+} <span class="text-syntax-keyword">from</span> <span class="text-syntax-string">'@autional/react'</span>;
 
-<span class="text-sky-300">const</span> <span class="text-white">config</span> = {
-  <span class="text-emerald-300">appId</span>: <span class="text-amber-300">'my-app'</span>,
-  <span class="text-emerald-300">issuer</span>: <span class="text-amber-300">'https://api.autional.cn'</span>,
+<span class="text-syntax-keyword">const</span> <span class="text-white">config</span> = {
+  <span class="text-syntax-function">appId</span>: <span class="text-syntax-string">'my-app'</span>,
+  <span class="text-syntax-function">issuer</span>: <span class="text-syntax-string">'https://api.autional.cn'</span>,
 };
 
-<span class="text-sky-300">export function</span> <span class="text-white">App</span>() {
-  <span class="text-fuchsia-300">return</span> (
-    <span class="text-sky-200">&lt;AutionalProvider</span>
-      <span class="text-emerald-300">config</span>=<span class="text-white">{config}</span>
-    <span class="text-sky-200">&gt;</span>
-      <span class="text-sky-200">&lt;YourProduct /&gt;</span>
-    <span class="text-sky-200">&lt;/AutionalProvider&gt;</span>
+<span class="text-syntax-keyword">export function</span> <span class="text-white">App</span>() {
+  <span class="text-syntax-keyword">return</span> (
+    <span class="text-syntax-tag">&lt;AutionalProvider</span>
+      <span class="text-syntax-function">config</span>=<span class="text-white">{config}</span>
+    <span class="text-syntax-tag">&gt;</span>
+      <span class="text-syntax-tag">&lt;YourProduct /&gt;</span>
+    <span class="text-syntax-tag">&lt;/AutionalProvider&gt;</span>
   );
 }`;
 
@@ -200,7 +200,7 @@ const capabilities = [
           <p class="mt-4 max-w-lg text-sm leading-7 text-sky-50/82">几行代码即可跑通第一个登录流程，随后按需接入组织、审计与开发者 API。</p>
         </div>
         <div class="bg-primary-900 p-8">
-          <pre class="overflow-x-auto rounded-md border border-white/10 bg-slate-950/70 p-5 text-[13px] leading-8 text-slate-100 sm:text-sm" set:html={codeSample}></pre>
+          <pre class="overflow-x-auto rounded-md border border-white/10 bg-slate-950/70 p-5 text-[13px] leading-8 text-syntax-plain sm:text-sm" set:html={codeSample}></pre>
           <div class="mt-5 rounded-md border border-sky-300/15 bg-slate-900 px-4 py-3 text-sm font-mono font-medium text-sky-100 break-all sm:break-normal">$ npm install @autional/react</div>
         </div>
       </div>
