@@ -101,7 +101,7 @@ export default function CookieConsent() {
             </h3>
             <button
               onClick={() => setShowSettings(false)}
-              className="rounded-md p-1 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-600 dark:hover:bg-neutral-800"
+              className="rounded-md p-1 text-[var(--color-text-muted)] hover:bg-neutral-100 hover:text-neutral-600 dark:hover:bg-neutral-800"
             >
               <X className="h-5 w-5" />
             </button>
@@ -112,7 +112,7 @@ export default function CookieConsent() {
                 <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100">{t('cookie.necessary')}</p>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400">{t('cookie.necessaryDesc')}</p>
               </div>
-              <span className="text-xs font-medium text-neutral-400">{t('cookie.alwaysOn')}</span>
+              <span className="text-xs font-medium text-[var(--color-text-muted)]">{t('cookie.alwaysOn')}</span>
             </div>
             <div className="flex items-center justify-between rounded-lg border border-neutral-200 p-3 dark:border-neutral-700">
               <div>
