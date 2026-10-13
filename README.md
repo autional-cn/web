@@ -1,3 +1,5 @@
+> **本仓库已归档**（只读）：源码与后续开发已迁移至 [github.com/autional/web](https://github.com/autional/web)；线上服务见 [www.autional.cn](https://www.autional.cn)。
+
 # Autional Website
 
 **Domain**: www.autional.cn
